@@ -25,7 +25,7 @@
       background-color: rgb(248, 249, 250);
     }
      
-    form{
+    form {
       width: 400px;
     margin: 20px auto 0 auto;
     padding: 20px;
@@ -70,7 +70,7 @@ label {
     color: rgb(59, 122, 59);
   }
   .error {
-    font-size: 12 px;
+    text-align: center;
     margin-top:  5px; 
   }
   h4{
@@ -78,7 +78,7 @@ label {
     font-weight: bold;
   }
   button:hover {
-opacity: 0.5;
+opacity: 0.5;  
   }
 
   input:focus {
@@ -86,16 +86,9 @@ opacity: 0.5;
   }
 
 button {
-  margin-left: 25px;
+  margin-left: 30px;
 }
 
-.alerta {
-  display: none;
-  font-size: 13px;
-  text-align: center;
-  margin: 3.2px 0 16px 0;
-  color: red;
-}
    
   </style>
 </head>
@@ -110,40 +103,37 @@ button {
       </div>
          <!-- Formulario de Inicio de Sesión con validacion por JS-->
          <div class="login-content">
-      <form id="form" action="./">
+      <form id="form" action="" >
       <div> <h4>Iniciar sesión</h4></div>
       <!-- Input de e-mail aqui-->
       <div>
         <label for="mail"> E-mail</label>
         <i class="fa-solid fa-at"></i>
         <input type="text" name="mail" 
-        id="mail" placeholder="usuario@mail.com" autofocus>
-        <p class="alerta">Escribe tu e-mail</p>
+        id="mail" placeholder="usuario@mail.com">
         <i class="fa-solid fa-circle-exclamation failure-icon"></i>
         <i class="fa-solid fa-circle-check success-icon"></i>
-  
+        <div class="error"></div>
       <br>  <!-- Le di un espacio para los iconos de succeSs -->
 
       <!-- Input de contraseña aqui-->
       <div>
         <label for="contraseña"> Contraseña</label>
         <i class="fa-solid fa-lock"></i>
-        <input type="password" name="contraseña" 
-        id="psw" placeholder="**********" >
-        <p class="alerta">Escribe tu contraseña</p>
+        <input type="text" name="contraseña" 
+        id="psw" placeholder="**********">
         <i class="fa-solid fa-circle-exclamation failure-icon"></i>
         <i class="fa-solid fa-circle-check success-icon"></i>
-        <!-- Error
-        <div class="error"></div>-->
+        <div class="error"></div>
     </div>
+    <br>
 <!-- Boton de ingreso-->
-    <button type="submit" class="btn btn-block btn btn-primary">Ingresar</button>
+    <button type="submit" class="btn btn-block btn btn-primary" id="ingreso">Ingresar</button>
   
     <!-- Boton de ingreso con Google-->
     <button class="btn btn-block btn btn-danger btn-google">
       <span class="fa fa-google"></span> Ingresar con Google
     </button>
-
       </form>
     </div>
     

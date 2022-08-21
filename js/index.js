@@ -12,7 +12,7 @@ function classes(classes) {
 
 
 let mail = id("mail"),
-  contrasenia = id("psw"),
+  contraseña = id("psw"),
   form = id("form"),
   errorMsj = classes("error"),
   successIcon = classes("success-icon"),

@@ -1,4 +1,4 @@
-const DATA_AUTOS = "https://japceibal.github.io/emercado-api/cats_products/101.json"; 
+let DATA_AUTOS = "https://japceibal.github.io/emercado-api/cats_products/101.json"; 
 
 const listadoAutos = document.getElementById("listadoAutos"); //Aca es donde coloco la info que necesito 
 

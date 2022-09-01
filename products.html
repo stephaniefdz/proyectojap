@@ -41,12 +41,77 @@
   <main class="pb-5 container">
     <div class="text-center mb-2">
       <h2 class="text-center mt-2"> Productos </h2>
-  <span style="text-align: center"> Verás aquí todos los productos de la categoría <b>Autos</b>  </span>
-    </div>  
-  <!--  Contenido de la entrega 1 --->
-    <div class="product-container" id="listadoAutos"></div>
+   <span style="text-align: center"> Verás aquí todos los productos de todas las categorías del sitio  </span>
+    </div> 
+     <!-- Boton para Desafiate : Buscar productos // POR EL MOMENTO NO FUNCIONA -->
+     <div class="row">
+      <div class="input-group col-md-4 m-2">
+        <input
+          type="search"
+          id="buscar"
+          class="form-control"
+          placeholder="🔍︎ Buscar"
+        />
+        <button id="clearSearch" class="btn btn-danger btn-sm m-1">X</button>
+      </div>
+      <!-- Fin boton para Desafiate : Buscar productos -->
+
+<!-- Agregado de botones de orden para la Entrega 2 -->
+      <div class="container">
+        <div class="row">
+          <div class="col text-end">
+            <div class="btn-group btn-group-toggle mb-4" data-bs-toggle="buttons">
+             
+              <input 
+              type="radio" class="btn-check"
+               name="options" 
+               id="menorPrecio">
+              <label class="btn btn-light"><i class="fas fa-sort-amount-down mr-1"></i>Menor Precio</label>
+              
+              <input 
+              type="radio" class="btn-check"
+               name="options" 
+               id="mayorPrecio">
+              <label class="btn btn-light"><i class="fas fa-sort-amount-up mr-1"></i>Mayor Precio</label>
+
+              <label class="btn btn-light" for="mayorRelevancia"> Relevancia</label>
+            </div>
+          </div>
+        </div>
+
+        <!-- Filtro rango de precio-->
+        <div class="row">
+          <div class="col-lg-6 offset-lg-6 col-md-12 mb-1 container">
+            <div class="row container p-0 m-0">
+              <div class="col">
+                <p class="font-weight-normal text-end my-2"> <b> Precio:</b></p>
+              </div>
+              <div class="col">
+                
+                <input class="form-control"
+                 type="number" 
+                 placeholder="min." 
+                 id="rangeFilterMin">
+              </div>
+              <div class="col">
+                <input class="form-control" 
+                type="number" 
+                placeholder="máx." 
+                id="rangeFilterMax">
+              </div>
+              <div class="col-3 p-0">
+                <div class="btn-group" role="group">
+                  <button class="btn btn-light btn-block" id="filter">Filtrar</button>
+                  <button class="btn btn-link btn-sm" id="clear">Limpiar</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+  <!--  Contenido de la entrega 1 y modificado el id="listadoAutos" por "listadoProductos--->
+    
+  <div class="product-container" id="listadoProductos"></div>
     <!--  Fin Contenido de la entrega 1 --->
-  </main>
       <!--  Footer inicial --->
   <footer class="text-muted">
     <div class="container">

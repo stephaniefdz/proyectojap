@@ -1,21 +1,25 @@
 
+
 // Defino las constantes
+const listaProductos = document.getElementById('verProductos');
 const ORDER_ASC_BY_COST  = "De menor a mayorcosto";
 const ORDER_DESC_BY_COST = "De mayor a menor costo";
 const ORDER_BY_PROD_REL  = "Relevancia";
 const ORDER_BY_SEARCH    = "Según búsqueda"; // Estoy probando si funciona 
+const PRODUCTOS = PRODUCTS_URL+localStorage.catID+".json";
 let currentSortCriterio  = undefined;
 let minCost = undefined;
 let maxCost = undefined;
 
-// Redefini la funcion para poder mostrar la lista de productos mixeando codigo de la entrtega  anterior con el de categories
 
-function showProductsList(){
-    
+const listadoAutos = document.getElementById("verProductos"); //Aca es donde coloco la info que necesito 
+
+function verListado(dataArray) {
+       
     let htmlContentToAppend = "";
-    for(let i = 0; i < currentProductsArray.length; i++){
-        let product       = currentProductsArray[i];
-        let searchProduct =document.getElementById("searchItem").value.toLowerCase(); 
+    for(let i = 0; i < dataArray.length; i++){
+        let product = dataArray[i];
+        let searchProduct = document.getElementById("searchItem").value.toLowerCase(); 
 
         // En el caso de que mo se selecione un MAX O MIN se deberian ver todos los productos 
         if (((minCost == undefined) || (minCost != undefined && parseInt(product.cost) >= minCost)) &&
@@ -43,6 +47,23 @@ function showProductsList(){
             }
             document.getElementById("verProductos").innerHTML = htmlContentToAppend;
         }
+
+
+// document.addEventListener("DOMContentLoaded", function(e) {
+//     let resultArray = [];
+//     getJSONData(PRODUCTOS).then(function (resultObj) {
+//         if (resultObj.status === "ok") {
+//             resultArray = resultObj.data.products;
+//         }
+//         console.log(resultArray);
+//         verListado(resultArray);
+//     }
+//     )
+// });
+
+
+
+
 
         // Criterios de orden de productos
 
@@ -87,27 +108,28 @@ function sortAndShowProducts(sortCriterio, productsArray){
 
     currentProductsArray = sortProducts(currentSortCriterio, currentProductsArray);
 
-    showProductsList();
+    verListado();
 }
 
 
 document.addEventListener("DOMContentLoaded", function(e){
-    getJSONData(PRODUCTS_URL).then(function(resultObj){
+    getJSONData(PRODUCTOS).then(function(resultObj){
         if (resultObj.status === "ok"){
-            sortAndShowProducts(ORDER_ASC_BY_COST, resultObj.data);
+            let objeto = resultObj.data
+            return objeto
         } 
     });
 
     document.getElementById("sortAsc").addEventListener("click", function(){
-        sortAndShowProducts(ORDER_ASC_BY_COST);
+        sortAndShowProducts(ORDER_ASC_BY_COST, objeto);
     });
 
     document.getElementById("sortDesc").addEventListener("click", function(){
-        sortAndShowProducts(ORDER_DESC_BY_COST);
+        sortAndShowProducts(ORDER_DESC_BY_COST, objeto);
     });
 
     document.getElementById("sortByCount").addEventListener("click", function(){
-        sortAndShowProducts(ORDER_BY_PROD_REL);
+        sortAndShowProducts(ORDER_BY_PROD_REL, objeto);
     });
     document.getElementById("clearRangeFilter").addEventListener("click", function(){
         document.getElementById("rangeFilterCostMin").value = "";
@@ -116,7 +138,7 @@ document.addEventListener("DOMContentLoaded", function(e){
         minCost = undefined;
         maxCost = undefined;
 
-        showProductsList();
+        verListado();
     });
 
     document.getElementById("rangeFilterCost").addEventListener("click", function(){
@@ -141,11 +163,10 @@ document.addEventListener("DOMContentLoaded", function(e){
             maxCost = undefined;
         }
 
-        showProductsList();
+        verListado();
     });
 
     
     
 });
 
-const listaProductos = document.getElementById('verProductos');

@@ -39,3 +39,12 @@ let getJSONData = function(url){
         return result;
     });
 }
+
+// Usuario en nav bar 
+
+document.addEventListener('DOMContentLoaded', ()=> {
+  let UserId = localStorage.getItem('mail');
+  let AddLi = document.getElementsByTagName('li');
+  let li = AddLi[3];
+  li.innerHTML = `<a class="text-normal nav-link">${UserId}</a>`;
+  });

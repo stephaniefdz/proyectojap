@@ -32,6 +32,7 @@ form.addEventListener("submit", (e) => { // Escucha para cuando se envíe el for
   e.preventDefault(); // Esto evita que el formulario se envie al hacer click en "Ingresar"
   validar(mail, 0, "Ingresa tu e-mail");  // 
   validar(contraseña, 1, "Ingresa tu contraseña");
+  store ();
 });
 
 // Esta funcion usa 3 argumentos que utiliza los ID, classes y el mensaje de .error que se imprime en pantalla  

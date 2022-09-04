@@ -18,6 +18,14 @@ let mail = id("mail"),
   successIcon = classes("success-icon"),
   failureIcon = classes("failure-icon");
 
+  // para guardar mail de usuario 
+  
+  function store()
+{
+    localStorage.setItem('mail',mail.value)
+
+    }
+ 
 // Cuando se presiona "Ingresar" 
 
 form.addEventListener("submit", (e) => { // Escucha para cuando se envíe el formulario

@@ -8,7 +8,7 @@ let currentSortCriterio  = undefined;
 let minCost = undefined;
 let maxCost = undefined;
 
-// Redefini la funcion para poder mostrar la lista de productos 
+// Redefini la funcion para poder mostrar la lista de productos mixeando codigo de la entrtega  anterior con el de categories
 
 function showProductsList(){
     
@@ -147,3 +147,5 @@ document.addEventListener("DOMContentLoaded", function(e){
     
     
 });
+
+const listaProductos = document.getElementById('verProductos')

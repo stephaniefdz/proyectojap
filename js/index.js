@@ -20,8 +20,7 @@ let mail = id("mail"),
 
   // para guardar mail de usuario 
   
-  function store()
-{
+  function store(){
     localStorage.setItem('mail',mail.value)
 
     }

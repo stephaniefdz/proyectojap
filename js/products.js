@@ -148,4 +148,4 @@ document.addEventListener("DOMContentLoaded", function(e){
     
 });
 
-const listaProductos = document.getElementById('verProductos')
+const listaProductos = document.getElementById('verProductos');

@@ -46,5 +46,5 @@ document.addEventListener('DOMContentLoaded', ()=> {
   let UserId = localStorage.getItem('mail');
   let AddLi = document.getElementsByTagName('li');
   let li = AddLi[3];
-  li.innerHTML = `<a class="text-normal nav-link">${UserId}</a>`;
+  li.innerHTML = `<a class=text-primary nav-link">${UserId}</a>`;
   });

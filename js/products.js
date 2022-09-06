@@ -118,7 +118,7 @@ function sortAndShowProducts(sortCriterio, productsArray) {
 document.addEventListener("DOMContentLoaded", function (e) {
   getJSONData(PRODUCTOS).then(function (resultObj) {
     if (resultObj.status === "ok") {
-        currentProductsArray = resultObj.product.data
+        currentProductsArray = resultObj.data.product
         verListado();  
     //   let objeto = resultObj.data;
     //   return objeto;

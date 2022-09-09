@@ -1,18 +1,18 @@
 
 // Defino las constantes
-const GET_PRODUCTOS = PRODUCTS_URL;  // Obtengo la URL directamente del Init (Codigo en init modificado)  
+
+const GET_PRODUCTOS = PRODUCTS_URL;  // Arreglado en init 
 const listaProductos = document.getElementById("verProductos");
 const ORDER_ASC_BY_COST = "costoAscendente";
 const ORDER_DESC_BY_COST = "costoDescendente";
 const ORDER_BY_PROD_REL = "Relevancia";
-const ORDER_BY_SEARCH = "Según Busqueda"; 
-// const PRODUCTOS = PRODUCTS_URL + localStorage.catID + ".json";
-let productsArray =  [];
+const ORDER_BY_SEARCH = "Según Busqueda"; // Estoy probando si funciona
+// const PRODUCTOS = `PRODUCTS_URL + localStorage.getItem("catID") + ".json"`; 
+let currentProductsArray =[];
 let currentSortCriteria = undefined;
 let minCost = undefined;
 let maxCost = undefined;
 
-// Criterios de orden de productos
 
 // Criterios de orden de productos
 
@@ -44,6 +44,7 @@ function sortProducts(criteria, array){
 
   return result;
 }
+
 
 
 
@@ -83,9 +84,6 @@ function verListado() {
   listaProductos.innerHTML = htmlContentToAppend;
 }
 
-
-// Con esto se ordena y se muestran los productos ordenados según el criterio seleccionado
-
 function sortAndShowProducts(sortCriteria, productsArray) {
   currentSortCriteria = sortCriteria;
 
@@ -98,24 +96,24 @@ function sortAndShowProducts(sortCriteria, productsArray) {
   verListado();
 }
 
-
-//Obtengo los datos 
-
 document.addEventListener("DOMContentLoaded", async function() { // Trae la resp de la URL de CATID y se convierte en una variable PRODUCTS
-  getJSONData(GET_PRODUCTOS).then(function (response) {
-      if (response.status === "ok") {
-          product = response.data; 
-          console.log(product)
-          verListado();
-      }
-      console.log(CATID)  
-      
-     
-  }
-  )
+    getJSONData(GET_PRODUCTOS).then(function (response) {
+        if (response.status === "ok") {
+            product = response.data; 
+            console.log(product)
+            verListado();
+        }
+        console.log(CATID)  
+        
+       
+    }
+    )
 });
 
+
+
 // INICIO DE FUNCIONES DE ORDEN, FILTRADO 
+
 
   // Al dar click deberia ordenar de forma ascendente segun precio/costo 
   document.getElementById("sortAsc").addEventListener("click", function(){
@@ -143,14 +141,13 @@ document.getElementById("sortByCount").addEventListener("click", function(){
 
     verListado();
 });
+
 //Obtengo el mínimo y máximo de los intervalos para filtrarlos x precio
 document.getElementById("rangeFilterCost").addEventListener("click", function(){
     minCost = document.getElementById("rangeFilterCostMin").value;
     maxCost = document.getElementById("rangeFilterCostMax").value;
 
-
     // Aca se verifica si minCost y maxCost son undefined / VACIOS para filtrarlos por su costo/precio
-   
     if ((minCost != undefined) && (minCost != "") && (parseInt(minCost)) >= 0){
       minCost = parseInt(minCost);
   }
@@ -169,4 +166,8 @@ document.getElementById("rangeFilterCost").addEventListener("click", function(){
 console.log(maxCost)
     verListado();
 });
+
+
+
+
 

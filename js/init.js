@@ -1,4 +1,4 @@
-const CATID = localStorage.getItem("catID"); 
+const CATID = localStorage.getItem("catID"); //
 const EXT_TYPE = ".json";
 const CATEGORIES_URL = "https://japceibal.github.io/emercado-api/cats/cat.json";
 const PUBLISH_PRODUCT_URL = "https://japceibal.github.io/emercado-api/sell/publish.json";

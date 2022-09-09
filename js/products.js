@@ -44,7 +44,7 @@ function sortProducts(criteria, array){
 
   return result;
 }
-  }
+
 
 
 function verListado() {

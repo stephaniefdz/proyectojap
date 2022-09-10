@@ -96,6 +96,11 @@ function sortAndShowProducts(sortCriteria, productsArray) {
   verListado();
 }
 
+
+
+//Función que se ejecuta una vez que se haya lanzado el evento de
+//que el documento se encuentra cargado, es decir, se encuentran todos los
+//elementos HTML presentes.
 document.addEventListener("DOMContentLoaded", async function() { // Trae la resp de la URL de CATID y se convierte en una variable PRODUCTS
     getJSONData(GET_PRODUCTOS).then(function (response) {
         if (response.status === "ok") {

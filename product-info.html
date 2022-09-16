@@ -80,18 +80,22 @@
          <div class="container" id="reviewContainer">
          </div>
          <div class="container border">
-           <label for="textAreaComments" class="text-muted">Escribe un comentario ✎</label>
-           <textarea class="form-control" name="comments mr-2" minlength="24" maxlength="244" id="textAreaComments" rows="4"
-             placeholder="..."></textarea>
+         <label for="textAreaComments" class="text-muted"> <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chat-right-dots" viewBox="0 0 16 16">
+         <path d="M2 1a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h9.586a2 2 0 0 1 1.414.586l2 2V2a1 1 0 0 0-1-1H2zm12-1a2 2 0 0 1 2 2v12.793a.5.5 0 0 1-.854.353l-2.853-2.853a1 1 0 0 0-.707-.293H2a2 2 0 0 1-2-2V2a2 2 0 0 1 2-2h12z"/>
+         <path d="M5 6a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm4 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm4 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0z"/>
+          </svg> Deja tu comentario:</label>
+          <textarea class="form-control" name="comments mr-2" minlength="24" maxlength="244" id="textAreaComments" rows="4" placeholder=""></textarea>
            <div class="container mt-3" id="starRating">
              <span class="comments" id="comments">Tu caliicación: </span>
-             <span class="fa fa-star" id="star1" ></span>
-             <span class="fa fa-star" id="star2" ></span>
-             <span class="fa fa-star" id="star3" ></span>
-             <span class="fa fa-star" id="star4" ></span>
-             <span class="fa fa-star" id="star5" ></span>
+             <span class="fa fa-star" id="star1" onclick="addStars(this,1)"></span>
+             <span class="fa fa-star" id="star2" onclick="addStars(this,2)"></span>
+             <span class="fa fa-star" id="star3" onclick="addStars(this,3)"></span>
+             <span class="fa fa-star" id="star4" onclick="addStars(this,4)"></span>
+             <span class="fa fa-star" id="star5" onclick="addStars(this,5)"></span>
            </div>
-           <button class="btn btn-dark btn-lg my-3" type="submit" id="submitComment">Envia tu comentario</button>
+           <button class="btn btn-dark btn-md my-3"  type="submit" id="submitComment"> <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-send-fill" viewBox="0 0 16 16">
+            <path d="M15.964.686a.5.5 0 0 0-.65-.65L.767 5.855H.766l-.452.18a.5.5 0 0 0-.082.887l.41.26.001.002 4.995 3.178 3.178 4.995.002.002.26.41a.5.5 0 0 0 .886-.083l6-15Zm-1.833 1.89L6.637 10.07l-.215-.338a.5.5 0 0 0-.154-.154l-.338-.215 7.494-7.494 1.178-.471-.47 1.178Z"/>
+          </svg>  Enviar</button>
          </div>
        </dl>
        <a type="button" class="btn btn-light btn-lg btn-block" href="products.html">Ver otros productos</a>

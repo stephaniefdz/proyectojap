@@ -32,14 +32,14 @@ const showIllustrativeImg = (array) => {
 // Funcion para marcar estrellas y enviarlas en el comentario 
 function addStars(str, nro) {
   for (var i = 1; i <= 5; i++) {
-    var star = document.getElementById('startar' + i)
-    star.className = "fa fa-star"  // className devuelve el valor del atributo de contenido de la clase del elemento
+    var s = document.getElementById('star' + i)
+    s.className = "fa fa-star"  // className devuelve el valor del atributo de contenido de la clase del elemento
   }
 
   for (var i = 1; i <= nro; i++) {
-    var star = document.getElementById('star' + i)
-    if (star.className == "fa fa-star") {
-      star.className = "fa fa-star checked"
+    var s = document.getElementById('star' + i)
+    if (s.className == "fa fa-star") {
+      s.className = "fa fa-star checked"
     }
   }
 

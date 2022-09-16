@@ -15,10 +15,10 @@ let maxCost = undefined;
 
 
 // Funcion para guardar el ID del producto en el localstorage
-function storeProd(id) {
-    localStorage.setItem("id", id);
-    window.location = "product-info.html"    
-}
+function saveProdID(id) {
+    localStorage.setItem("ID", id);
+    window.location = "product-info.html"       
+    }
 
 
 // Criterios de orden de productos

@@ -14,12 +14,6 @@ let minCost = undefined;
 let maxCost = undefined;
 
 
-// Funcion para guardar el ID del producto en el localstorage
-function saveProdID(id) {
-    localStorage.setItem("ID", id);
-    window.location = "product-info.html"       
-    }
-
 
 // Criterios de orden de productos
 
@@ -51,6 +45,12 @@ function sortProducts(criteria, array){
 
   return result;
 }
+
+// Funcion para guardar el ID del producto en el localstorage
+function saveProdID(id) {
+    localStorage.setItem("ID", id);
+    window.location = "product-info.html"       
+    }
 
 
 

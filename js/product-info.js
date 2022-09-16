@@ -79,7 +79,7 @@ const showUsersComments = (productInfo) => {
   for (let i = 0; i < productInfo.length; i++) {
     let product = productInfo[i];
     showUsersCommentsHtmlContentToAppend += `
-    <div class="p-6 my-2">
+    <div class="p-auto my-auto">
       <div class="d-flex justify-content-between">
         <h5 class="font-weight-bold"><i class="fas fa-user mr-1"></i> ${product.user}</h5>
         <div class="starRating">

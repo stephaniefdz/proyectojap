@@ -43,14 +43,24 @@ let getJSONData = function(url){
     });
 }
 
-// Usuario en nav bar 
+// Actualizacion de codigo para generar menu desplegable para Entrega 4: basado en https://getbootstrap.com/docs/5.0/components/dropdowns/
 
 document.addEventListener('DOMContentLoaded', ()=> {
   let UserId = localStorage.getItem('mail');
   let AddLi = document.getElementsByTagName('li');
   let li = AddLi[3]; // Accedo a la posición  3 de la barra de navegacion (tambien se podria haber utilizado last-child
-  li.innerHTML = `<a class=text-light nav-link"> <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="#8fbc8f" class="bi bi-person-check-fill" viewBox="0 0 16 16">
+  li.innerHTML = `<div class="dropdown">
+  <button class="btn btn-dark dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+  <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="#8fbc8f" class="bi bi-person-check-fill" viewBox="0 0 16 16">
   <path fill-rule="evenodd" d="M15.854 5.146a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 0 1 .708-.708L12.5 7.793l2.646-2.647a.5.5 0 0 1 .708 0z"/>
   <path d="M1 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H1zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/>
-</svg> ${UserId}</a>`;
+</svg>${UserId}</button>
+  </button>
+  <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+    <li><a class="dropdown-item" href="cart.html">Mi carrito </a></li>
+    <li><a class="dropdown-item" href="my-profile.html">Mi perfil</a></li>
+    <li><a class="dropdown-item" href="index.html">Cerrar sesión</a></li>
+  </ul>
+</div>
+`;
   });

@@ -43,6 +43,14 @@ let getJSONData = function(url){
     });
 }
 
+// Funcion para cerrar sesion 
+
+function userlogOut(){
+  localStorage.removeItem("mail");
+  window.location = "index.html"
+}
+
+
 // Actualizacion de codigo para generar menu desplegable para Entrega 4: basado en https://getbootstrap.com/docs/5.0/components/dropdowns/
 
 document.addEventListener('DOMContentLoaded', ()=> {
@@ -59,7 +67,7 @@ document.addEventListener('DOMContentLoaded', ()=> {
   <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
     <li><a class="dropdown-item" href="cart.html">Mi carrito </a></li>
     <li><a class="dropdown-item" href="my-profile.html">Mi perfil</a></li>
-    <li><a class="dropdown-item" href="index.html">Cerrar sesión</a></li>
+    <li><a class="dropdown-item" onclick=userlogOut()>Cerrar sesión</a></li>
   </ul>
 </div>
 `;

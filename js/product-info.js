@@ -95,6 +95,35 @@ const showUsersComments = (productInfo) => {
   showStars(productInfo);
 }
 
+
+// Vuelvo a escribir aca la funcion para guardar el ID del producto en el localstorage y redirigir a product-info.html
+function saveProdID(id) {
+  localStorage.setItem("ID", id);
+  window.location = "product-info.html"       
+  }
+
+  // Con esta funcion se puede ver la imagen principal y nombre de producto relacionado 
+
+const showRelatedProducts = (rArray) => {
+  let showRelatedProductsHtmlToAppend = '';
+  for (let i = 0; i < rArray.length; i++) {
+    let related = rArray[i];
+
+    showRelatedProductsHtmlToAppend +=  
+    `<div class="card" style="width: 18rem;">
+  <img class="card-img-top" src="${related.image}">
+  <div class="card-body">
+    <h5 class="card-title"> <b>${related.name} </b>  </h5>
+    <button type="button" class="btn btn-outline-dark" onclick="saveProdID(${related.id})"> Ver producto</button> 
+  </div>
+</div>
+
+`
+  }
+  document.getElementById("relatedProduct").innerHTML = showRelatedProductsHtmlToAppend;
+}
+
+
 // Comentar 
 const submitComment = document.getElementById('submitComment');
 const postComments = () => {
@@ -147,6 +176,7 @@ document.addEventListener("DOMContentLoaded", async function() {
       productCategoryHTML.innerHTML = product.category;
 
       showIllustrativeImg(product.images);
+      showRelatedProducts(product.relatedProducts);
 
     }
   });

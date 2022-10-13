@@ -36,13 +36,62 @@
     </div>
   </nav>
   <main>
-<div class="card">
-      <div class="row">
-          <div class="col-md-8 cart">
-              <div class="title">
-                  <div class="row">
-                    <div class="col"> <h3>Carrito de Compras</h3> 
-                    <p> Articulos a comprar</p></div>
+ <div class="col"> <h3 class="text-center p-3"> Carrito de Compras</h3> 
+   <h4 class="p-4">Articulos a comprar</h4>
+   <!-- E5 productos del carrito  -->
+   <table class="table">
+    <thead>
+      <tr>
+        <th scope="col"></th>
+        <th scope="col">Nombre</th>
+        <th scope="col">Costo</th>
+        <th scope="col">Cantidad</th>
+        <th scope="col">Subtotal</th>
+      </tr>
+    </thead>
+    <tbody id="products-in-cart">
+    </tbody>
+  </table>
+  <hr>
+
+  <!-- E5 Tipos de envio-->
+  <div class="row"> </div>
+  <div class="col">
+     <h5 class="mb-3">Tipo de publicación</h5>
+          <div class="d-block my-3">
+    <div class="custom-control custom-radio">
+      <input id="premiumradio" name="publicationType1" type="radio" class="custom-control-input" checked=""
+        required="">
+      <label class="custom-control-label" for="premiumradio">Premium 2 a 5 días (15%)</label>
+    </div>
+    <div class="custom-control custom-radio">
+      <input id="expressradio" name="publicationType2" type="radio" class="custom-control-input" required="">
+      <label class="custom-control-label" for="expressradio">Express 5 a 8 días (7%)</label>
+    </div>
+    <div class="custom-control custom-radio">
+      <input id="standardradio" name="publicationType3" type="radio" class="custom-control-input" required="">
+      <label class="custom-control-label" for="standardradio">Standard 12 a 15 días (5%)</label>
+    </div>
+  </div><br>
+  <form action="">
+    <div class="form-row">
+      <h4 class="text-muted">Dirección de envío </h4>
+      <div class="form-group col-sm-4">
+        <label for="address">Calle:</label>
+        <input type="text" class="form-control" id="userAddres" placeholder="Nombre de calle" required>
+      </div>
+      <div class="form-group col-sm-4">
+        <label for="numAdress">Número:</label>
+        <input type="text" class="form-control" id="usernumAdress" placeholder="Número de puerta" required>
+      </div>
+    </div>
+    <div class="form-row">
+      <div class="form-group col-sm-4">
+        <label for="corner">Esquina:</label>
+        <input type="text" class="form-control" id="usercornerAdress" placeholder="Intersección" required>
+      </div>
+    </div>
+<hr>
   </main>
   <footer class="text-muted">
     <div class="container">

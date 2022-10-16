@@ -6,7 +6,7 @@ const PUBLISH_PRODUCT_URL = "https://japceibal.github.io/emercado-api/sell/publi
 const PRODUCTS_URL = `https://japceibal.github.io/emercado-api/cats_products/${CATID}${EXT_TYPE}`;
 const PRODUCT_INFO_URL = `https://japceibal.github.io/emercado-api/products/${prodID}${EXT_TYPE}`;
 const PRODUCT_INFO_COMMENTS_URL = `https://japceibal.github.io/emercado-api/products_comments/${prodID}${EXT_TYPE}`;
-const CART_INFO_URL =`https://japceibal.github.io/emercado-api/user_cart/${EXT_TYPE}`;
+const CART_INFO_URL =`https://japceibal.github.io/emercado-api/user_cart/25801${EXT_TYPE}`;
 const CART_BUY_URL = "https://japceibal.github.io/emercado-api/cart/buy.json";
 
 

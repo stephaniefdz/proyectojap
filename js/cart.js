@@ -36,7 +36,7 @@ function removeArticle (id) {
 
     let article = document.getElementsByClassName("art" +id);
     article[0].parentElement.remove(); 
-    window.setTimeout(function(){location.reload()},200);  // Despues de presionar el boton de la papelera (icono en rojo), se elimina y se reinicia el articulo en pantalla 
+    window.setTimeout(function(){location.reload()},200);  // Despues de presionar el boton de la papelera (icono en rojo), se elimina y se reinicia el articulo en pantalla (SOLO PARA ESTA ENTREGA) 
 }
 
 //Función que se ejecuta una vez que se haya lanzado el evento de

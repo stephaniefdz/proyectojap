@@ -12,6 +12,7 @@
 </head>
 
 <body>
+  <!-- INICIO barra de navegacion  -->
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark p-1">
     <div class="container">
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
@@ -35,6 +36,10 @@
       </div>
     </div>
   </nav>
+  <!-- FIN barra de navegacion  -->
+  
+  <!-- INICIO ENTREGA 5  -->
+  
   <main>
  <div class="col"> <h3 class="text-center p-3"> Carrito de Compras</h3> 
    <h4 class="p-4">Articulos a comprar</h4>
@@ -49,7 +54,7 @@
         <th scope="col">Subtotal</th>
       </tr>
     </thead>
-    <tbody id="products-in-cart">
+    <tbody id="cart">
     </tbody>
   </table>
   <hr>
@@ -78,7 +83,9 @@
       <h4 class="text-muted">Dirección de envío </h4>
       <div class="form-group col-sm-4">
         <label for="address">Calle:</label>
-        <input type="text" class="form-control" id="userAddres" placeholder="Nombre de calle" required>
+        <input type="text" class="form-control" 
+               id="userAddres"
+               placeholder="Nombre de calle" required>
       </div>
       <div class="form-group col-sm-4">
         <label for="numAdress">Número:</label>
@@ -92,6 +99,23 @@
       </div>
     </div>
 <hr>
+    <div class="col-md-6">
+  <h3>Resumen</h3>
+  
+  <p>Subtotal<span id="sub"></span><button id="tooltip" type="button" class="btn btn-link" data-bs-toggle="tooltip" data-bs-placement="right" title="El subtotal refleja el precio total de tu pedido antes de aplicar cualquier descuento. No incluye gastos de envío y gestión.">
+<svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" fill="#000000" class="bi bi-info-circle-fill" viewBox="0 0 16 16">
+      <path d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16zm.93-9.412-1 4.705c-.07.34.029.533.304.533.194 0 .487-.07.686-.246l-.088.416c-.287.346-.92.598-1.465.598-.703 0-1.002-.422-.808-1.319l.738-3.468c.064-.293.006-.399-.287-.47l-.451-.081.082-.381 2.29-.287zM8 5.5a1 1 0 1 1 0-2 1 1 0 0 1 0 2z"/>
+    </svg></button></p>
+  <p>Gastos de envío y gestión<span id="envio"></span><button id="tooltip"  type="button" class="btn btn-link" data-bs-toggle="tooltip" data-bs-placement="right" title="Se calculará según tu selección y los aranaceles sobre la venta aplicables en tipo de publicación.">
+      <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" fill="#000000" class="bi bi-info-circle-fill" viewBox="0 0 16 16">
+            <path d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16zm.93-9.412-1 4.705c-.07.34.029.533.304.533.194 0 .487-.07.686-.246l-.088.416c-.287.346-.92.598-1.465.598-.703 0-1.002-.422-.808-1.319l.738-3.468c.064-.293.006-.399-.287-.47l-.451-.081.082-.381 2.29-.287zM8 5.5a1 1 0 1 1 0-2 1 1 0 0 1 0 2z"/>
+          </svg>
+        </button></p>
+  <hr/>
+  
+  <p>Total:<span id="total"></span> </p> 
+  <button type="button" class="btn btn-warning btn-block btn-lg m-1">Pagar</button>
+</div>
   </main>
   <footer class="text-muted">
     <div class="container">

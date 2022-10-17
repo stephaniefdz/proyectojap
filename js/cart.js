@@ -9,7 +9,6 @@ const productsinCartHTML = document.getElementById("cart");
     for (let i = 0; i < cart.length; i++) {
         showCartHtmlToAppend += ` 
         <tr> 
-        <tr onchange="modify(subto)">
             <th scope="col" class="${"art"+i} "><img src="${cart[i].image}" width="150px"></th>
             <th scope="col" class="${"art"+i}">${cart[i].name}</th>
             <th scope="col" class="${"art"+i}">${cart[i].currency} <span class="cost">${cart[i].unitCost}</span></th>

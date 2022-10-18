@@ -7,6 +7,7 @@
   <title>eMercado - Todo lo que busques está aquí</title>
   <link href="https://fonts.googleapis.com/css?family=Raleway:300,300i,400,400i,700,700i,900,900i" rel="stylesheet">
   <link href="css/bootstrap.min.css" rel="stylesheet">
+  <link rel="shortcut icon" href="#">
   <link href="css/font-awesome.min.css" rel="stylesheet">
   <link href="css/styles.css" rel="stylesheet">
 </head>
@@ -42,96 +43,119 @@
   
   
   <main>
-  <div class="col"> <h3 class="text-center p-3"> Carrito de Compras</h3> 
-   <h4 class="p-4">Articulos a comprar</h4>
-   <!-- productos del carrito  -->
-   <table class="table">
-    <thead>
-      <tr>
-        <th scope="col"></th>
-        <th scope="col">Nombre</th>
-        <th scope="col">Costo</th>
-        <th scope="col">Cantidad</th>
-        <th scope="col">Subtotal</th>
-      </tr>
-    </thead>
-    <tbody id="cart">
-    </tbody>
-  </table>
-  <hr>
-  <!-- Tipos de envio-->
-  <div class="row"> </div>
-  <div class="col">
-     <h5 class="mb-3">Tipo de envío</h5>
-          <div class="d-block my-3">
-    <div class="custom-control custom-radio">
-      <input id="premiumradio"
-       name="envioType1" 
-       type="radio" 
-       class="custom-control-input" 
-       checked=""
-        required="">
-      <label class="custom-control-label" 
-      for="premiumradio">Premium 2 a 5 días (15%)</label>
-    </div>
-    <div class="custom-control custom-radio">
-      <input id="expressradio" 
-      name="envioType2"
-       type="radio" 
-       class="custom-control-input" 
-       required="">
-
-      <label class="custom-control-label" 
-      for="expressradio">Express 5 a 8 días (7%)</label>
-    </div>
-
-    <div class="custom-control custom-radio">
-      <input id="standardradio" 
-      name="envioType3" 
-      type="radio" 
-      class="custom-control-input" 
-      required="">
-
-      <label class="custom-control-label" 
-        for="standardradio">Standard 12 a 15 días (5%)</label>
-    </div>
-  </div><br>
-  <form action="">
-    <div class="form-row">
-      <h4 class="text-muted">Dirección de envío </h4>
-      <div class="form-group col-sm-4">
-        <label for="address">Calle:</label>
-        <input type="text" class="form-control" id="userAddres" placeholder="Nombre de calle" required>
+   <div class="container p-5">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="table-responsive">
+            <table class="table">
+              <thead>
+                <tr>
+                  <th scope="col" class="h3"><i class="fa-solid fa-cart-shopping"></i></th>
+                <th scope="col">Nombre</th>
+                <th scope="col">Precio</th>
+                <th scope="col">Cantidad</th>
+                <th scope="col">Subtotal</th>
+                <th scope="col"></th>
+                </tr>
+              </thead>
+              <tbody id="cart"></tbody>
+          </table>
+        </div>
       </div>
-      <div class="form-group col-sm-4">
-        <label for="numAdress">Número:</label>
-        <input type="text" class="form-control" id="usernumAdress" placeholder="Número de puerta" required>
+      <hr />
+
+      <!--tipo de envios --> 
+
+      <div class="row" id="envios">
+        <div class="col-md-6">
+          <h5><i class="fa-solid fa-truck-fast"></i> Seleccione tipo de envío:</h5>
+          <div class="form-check">
+            <input
+              class="form-check-input"
+              type="radio"
+              name="envio"
+              id="standard"
+              onclick="resumenCompra()"
+              checked
+            />
+            <label class="form-check-label" for="standard">
+             Premium (15%).</label
+            >
+            <small> Entrega en 2 - 15 días.</small>
+          </div>
+          <div class="form-check">
+            <input
+              class="form-check-input"
+              type="radio"
+              name="envio"
+              id="express"
+              onclick="resumenCompra()"
+            />
+            <label class="form-check-label" for="express">
+            Express (7%).</label
+            >
+             <small> Entrega en 5 - 8 días.</small>
+          </div>
+          <div class="form-check">
+            <input
+              class="form-check-input"
+              type="radio"
+              name="envio"
+              id="express"
+              onclick="resumenCompra()"
+            />
+            <label class="form-check-label" for="express">
+            Standard (5%).</label
+            >
+             <small> Entrega en 12 - 15 días.</small>
+          </div>
+ <!-- FIN tipo de envios --> 
+
+
+       
+          <!---FORMULARIO PARA  DATOS DE ENVIO DEL USUARIO ---->
+
+          <form class="mt-4">
+            <h5><i class="fa-solid fa-address-card"></i> Indique datos de envío:</h5>
+            <input
+              type="text"
+              class="form-control mt-2"
+              placeholder="Nombre de calle"
+              required
+            />
+            <input
+              type="text"
+              class="form-control mt-2"
+              placeholder="Número de puerta/apto"
+              required
+            />
+            <input
+              type="text"
+              class="form-control mt-2"
+              required
+              placeholder="Esquina"
+            />
+          </form>
+        </div>
+
+       <!---CREACION DE RESUMEN DE PEIDO EN UNA COL COMO EN LAS PAGINAS DE ECOMMERCE ---->
+
+        <div class="col-md-6">
+          <h4>Resumen de compra</h4>
+          <hr>
+          <p>Subtotal: $ UYU <span id="subtotal"></span></p>
+          <p>Gastos de envío y gestión: $ UYU <span id="envio"></span></p>
+          <hr/>
+          <p>Total: $ UYU <span id="total"></span></p>
+      
+      <br>
+              <div class="d-grid gap-2">
+                <button class="btn btn-dark" type="button"> <i class="fa-solid fa-credit-card p-2"></i> Pagar con tarjeta de crédito / débito</button>
+                <button class="btn btn-warning" type="button"><i class="fa-brands fa-paypal p-2"></i> Pagar con PayPal</button>
+              </div>
+        </div>
       </div>
     </div>
-    <div class="form-row">
-      <div class="form-group col-sm-4">
-        <label for="corner">Esquina:</label>
-        <input type="text" class="form-control" id="usercornerAdress" placeholder="Intersección" required>
-      </div>
-    </div>
-<hr>
-<div class="col-md-6">
-  <h3>Resumen</h3>
-  
-  <p>Subtotal<span id="sub"></span><button id="tooltip" type="button" class="btn btn-link" data-bs-toggle="tooltip" data-bs-placement="right" title="El subtotal refleja el precio total de tu pedido antes de aplicar cualquier descuento. No incluye gastos de envío y gestión.">
-<svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" fill="#000000" class="bi bi-info-circle-fill" viewBox="0 0 16 16">
-      <path d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16zm.93-9.412-1 4.705c-.07.34.029.533.304.533.194 0 .487-.07.686-.246l-.088.416c-.287.346-.92.598-1.465.598-.703 0-1.002-.422-.808-1.319l.738-3.468c.064-.293.006-.399-.287-.47l-.451-.081.082-.381 2.29-.287zM8 5.5a1 1 0 1 1 0-2 1 1 0 0 1 0 2z"/>
-    </svg></button></p>
-  <p>Gastos de envío y gestión<span id="envio"></span><button id="tooltip"  type="button" class="btn btn-link" data-bs-toggle="tooltip" data-bs-placement="right" title="Se calculará según tu selección y los aranaceles sobre la venta aplicables en tipo de publicación.">
-      <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" fill="#000000" class="bi bi-info-circle-fill" viewBox="0 0 16 16">
-            <path d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16zm.93-9.412-1 4.705c-.07.34.029.533.304.533.194 0 .487-.07.686-.246l-.088.416c-.287.346-.92.598-1.465.598-.703 0-1.002-.422-.808-1.319l.738-3.468c.064-.293.006-.399-.287-.47l-.451-.081.082-.381 2.29-.287zM8 5.5a1 1 0 1 1 0-2 1 1 0 0 1 0 2z"/>
-          </svg>
-        </button></p>
-  <hr/>
-  
-  <p>Total:<span id="total"></span> </p> 
-  <button type="button" class="btn btn-warning btn-block btn-lg m-1">Pagar</button>
-</div>
   </main>
     
     <!-- FIN ENTREGA 5  -->
@@ -141,6 +165,7 @@
       <p class="float-end">
         <a href="#">Volver arriba</a>
       </p>
+      <a type="button" class="btn btn-link btn-md btn-block" href="products.html"><i class="fa-sharp fa-solid fa-arrow-left"></i> Seguir comprando</a>
       <p>Este sitio forma parte de <a href="https://jovenesaprogramar.edu.uy/" target="_blank">Jovenes a Programar</a> -
         2022</p>
       <p>Clickea <a target="_blank" href="Letra.pdf">aquí</a> para descargar la letra del obligatorio.</p>
@@ -155,6 +180,7 @@
     </div>
   </div>
   <script src="js/bootstrap.bundle.min.js"></script>
+  <script src="https://kit.fontawesome.com/a846280a86.js" crossorigin="anonymous"></script>
   <script src="js/init.js"></script>
   <script src="js/cart.js"></script>
 </body>

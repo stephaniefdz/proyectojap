@@ -42,239 +42,240 @@
   <!-- INICIO ENTREGA 5  -->
   
   
-  <main>
-   <div class="container p-5">
-      <div class="row">
-        <div class="col-md-12">
-          <div class="table-responsive">
-            <table class="table">
-              <thead>
-                <tr>
-                  <th scope="col" class="h3"><i class="fa-solid fa-cart-shopping"></i></th>
-                <th scope="col">Nombre</th>
-                <th scope="col">Precio</th>
-                <th scope="col">Cantidad</th>
-                <th scope="col">Subtotal</th>
-                <th scope="col"></th>
-                </tr>
-              </thead>
-              <tbody id="cart"></tbody>
-          </table>
-        </div>
-      </div>
-      <hr />
-
-      <!--tipo de envios --> 
-
-      <div class="row" id="envios">
-        <div class="col-md-6">
-          <h5><i class="fa-solid fa-truck-fast"></i> Seleccione tipo de envío:</h5>
-          <div class="form-check">
-            <input
-              class="form-check-input"
-              type="radio"
-              name="envio"
-              id="standard"
-              onclick="resumenCompra()"
-              checked
-            />
-            <label class="form-check-label" for="standard">
-             Premium (15%).</label
-            >
-            <small> Entrega en 2 - 15 días.</small>
-          </div>
-          <div class="form-check">
-            <input
-              class="form-check-input"
-              type="radio"
-              name="envio"
-              id="express"
-              onclick="resumenCompra()"
-            />
-            <label class="form-check-label" for="express">
-            Express (7%).</label
-            >
-             <small> Entrega en 5 - 8 días.</small>
-          </div>
-          <div class="form-check">
-            <input
-              class="form-check-input"
-              type="radio"
-              name="envio"
-              id="express"
-              onclick="resumenCompra()"
-            />
-            <label class="form-check-label" for="express">
-            Standard (5%).</label
-            >
-             <small> Entrega en 12 - 15 días.</small>
-          </div>
- <!-- FIN tipo de envios --> 
-
-
-       
- <!---FORMULARIO PARA  DATOS DE ENVIO DEL USUARIO ---->
   
- <form class="mt-4 needs-validation" novalidate>
-  <h5><i class="fa-solid fa-address-card"></i>  Indique datos de envío:</h5>
-  <div class="col-md-8">
-    <label for="validationCustom03" class="form-label">Nombre de calle</label>
-    <input type="text" class="form-control" id="validationCustom03" required>
-    <div class="invalid-feedback">
-      Ingresa una calle válida.
-    </div>
-    <div class="valid-feedback">
-      Ok.
-    </div>
-  </div>
-
-  <div class="col-md-8">
-    <label for="validationCustom03" class="form-label">Número de puerta</label>
-    <input type="text" class="form-control" id="validationCustom03" required>
-    <div class="invalid-feedback">
-      Ingresa un número de puerta o apartamento.
-    </div>
-    <div class="valid-feedback">
-      Ok.
-    </div>
-  </div>
-
-  <div class="col-md-8">
-    <label for="validationCustom03" class="form-label">Esquina</label>
-    <input type="text" class="form-control" id="validationCustom03" required>
-    <div class="invalid-feedback">
-      Ingresa una esquina.
-    </div>
-    <div class="valid-feedback">
-      Ok.
-    </div>
-  </div>
-
-  <div class="col-12">
-  </div>
-        </div>
-
-       <!---CREACION DE RESUMEN DE PEIDO EN UNA COL COMO EN LAS PAGINAS DE ECOMMERCE ---->
-
-        <div class="col-md-6">
-          <h4>Resumen de compra</h4>
-          <hr>
-          <p>Subtotal: $ UYU <span id="subtotal"></span></p>
-          <p>Gastos de envío y gestión: $ UYU <span id="envio"></span></p>
-          <hr/>
-          <p>Total: $ UYU <span id="total"></span></p>
-      
-      <br>
-          <!-- ENTREGA 6 Boton MODAL -->
-      
-      <div class="d-grid gap-2">
-       <button class="btn btn-link" type="button" class="btn btn-primary" data-bs-toggle="modal"
-        data-bs-target="#pagpModal"> <i class="fa-solid fa-credit-card p-2"></i> Seleccionar forma de pago </button>
-      </div>
-<br>
-  <!-- Boton MODAL -->
-          
-              <div class="d-grid gap-2">
-                <button class="btn btn-dark" type="button"> <i class="fa-solid fa-credit-card p-2"></i> Finalizar compra</button></form>
-              </div>
-       <!-- ENTREGA 6 MODAL -->
-              <div class="modal fade" tabindex="-1" role="dialog" id="pagpModal">
-                <div class="modal-dialog modal-dialog-centered" role="document">
-                  <div class="modal-content">
-                    <div class="modal-header">
-                      <h5 class="modal-title"> Forma de pago </h5>
-                    </div>
-                    <div class="modal-body">
-
-                        <div class="form-check">
-                          <input class="form-check-input" type="radio" name="payCard" id="payCard">
-                          <label class="form-check-label" for="payCard">
-                            <i class="fa-brands fa-cc-visa"></i> <i class="fa-brands fa-cc-mastercard"></i> Tarjeta de crédito / débito 
-                          </label>
-                        </div>
-
-                        <hr>
-
-                        <div class="mt-3 mr-2">
-                          <div class="row g-2">
-                              <div class="col-md-6">
-                                  <div class="inputbox">
-                                      <small>Número de tarjeta:</small>
-
-                                      <input type="text" 
-                                      class="form-control" 
-                                      name=""
-                                      placeholder="1234 5678 9012 3456">
-                                  </div> 
-                              </div>
-
-
-                              <div class="col-md-6">
-                                  <div class="inputbox">
-                                      <small>Código de seguridad:</small>
-                                      <input type="text" 
-                                      class="form-control" 
-                                      name="" placeholder="CVV">
-                                  </div>
-                              </div> 
-
-                          </div>
-                      </div>
-
-
-                      <div class="mt-3 mr-2">
-                          <div class="row g-2">
-                              <div class="col-md-6">
-                                  <div class="row g-2">
-                                      <div class="col-md-6">
-                                          <div class="inputbox">
-      
-                                      <small>Vencimiento:</small>
-                                      <input type="text" 
-                                      class="form-control" 
-                                      name=""
-                                      maxlength="3"
-                                      placeholder="MM/AA">
-                                  </div>
-                                      </div>
-                                  </div>
-                              </div>
-                          </div> 
-                      <hr>
-        
-
-                      <div class="form-check">
-                        <input class="form-check-input" type="radio" name="payTrans" id="payTrans">
-                        <label class="form-check-label" for="payTrans">
-                          <i class="fa-solid fa-money-bill-transfer"></i> Transferencia bancaria
-                        </label>
-                      </div>
-
-                      <div class="mt-3 mr-2">
-                        <div class="row g-2">
-                            <div class="col-md-6">
-                                <div class="inputbox">
-                            
-                                    <small>Número de cuenta:</small>
-
-                                    <input type="text" 
-                                    class="form-control" 
-                                    name=""
-                                    placeholder="1234 5678 9012 3456">
-                                </div> 
-                               
-                            </div> <hr>
-                        </div>
-                        </div> 
-                    </div>
-                    
-                    <div class="modal-footer">
-                      <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Cerrar</button>
-                    </div>
-                     <!-- ENTREGA 6 MODAL -->
-      
-    </div>
-  </main>
+  <main>
+    <div class="container p-5">
+       <div class="row">
+         <div class="col-md-12">
+           <div class="table-responsive">
+             <table class="table">
+               <thead>
+                 <tr>
+                   <th scope="col" class="h3"><i class="fa-solid fa-cart-shopping"></i></th>
+                 <th scope="col">Nombre</th>
+                 <th scope="col">Precio</th>
+                 <th scope="col">Cantidad</th>
+                 <th scope="col">Subtotal</th>
+                 <th scope="col"></th>
+                 </tr>
+               </thead>
+               <tbody id="cart"></tbody>
+           </table>
+         </div>
+       </div>
+       <hr />
+ 
+       <!--tipo de envios --> 
+ 
+       <div class="row" id="envios">
+         <div class="col-md-6">
+           <h5><i class="fa-solid fa-truck-fast"></i> Seleccione tipo de envío:</h5>
+           <div class="form-check">
+             <input
+               class="form-check-input"
+               type="radio"
+               name="envio"
+               id="standard"
+               onclick="resumenCompra()"
+               checked
+             />
+             <label class="form-check-label" for="standard">
+              Premium (15%).</label
+             >
+             <small> Entrega en 2 - 15 días.</small>
+           </div>
+           <div class="form-check">
+             <input
+               class="form-check-input"
+               type="radio"
+               name="envio"
+               id="express"
+               onclick="resumenCompra()"
+             />
+             <label class="form-check-label" for="express">
+             Express (7%).</label
+             >
+              <small> Entrega en 5 - 8 días.</small>
+           </div>
+           <div class="form-check">
+             <input
+               class="form-check-input"
+               type="radio"
+               name="envio"
+               id="express"
+               onclick="resumenCompra()"
+             />
+             <label class="form-check-label" for="express">
+             Standard (5%).</label
+             >
+              <small> Entrega en 12 - 15 días.</small>
+           </div>
+  <!-- FIN tipo de envios --> 
+ 
+ 
+   <!--- E6 FORMULARIO PARA  DATOS DE ENVIO DEL USUARIO CON VALIDACIÓN ---->
+   
+  <form class="mt-4 needs-validation" novalidate>
+   <h5><i class="fa-solid fa-address-card"></i>  Indique datos de envío:</h5>
+   <div class="col-md-8">
+     <label for="validationCustom03" class="form-label">Nombre de calle</label>
+     <input type="text" class="form-control" id="validationCustom03" required>
+     <div class="invalid-feedback">
+       Ingresa una calle válida.
+     </div>
+     <div class="valid-feedback">
+       Ok.
+     </div>
+   </div>
+ 
+   <div class="col-md-8">
+     <label for="validationCustom03" class="form-label">Número de puerta</label>
+     <input type="text" class="form-control" id="validationCustom03" required>
+     <div class="invalid-feedback">
+       Ingresa número de puerta o apartamento.
+     </div>
+     <div class="valid-feedback">
+       Ok.
+     </div>
+   </div>
+ 
+   <div class="col-md-8">
+     <label for="validationCustom03" class="form-label">Esquina</label>
+     <input type="text" class="form-control" id="validationCustom03" required>
+     <div class="invalid-feedback">
+       Ingresa una esquina.
+     </div>
+     <div class="valid-feedback">
+       Ok.
+     </div>
+   </div>
+ 
+   <div class="col-12">
+   </div>
+         </div>
+ 
+        <!---CREACION DE RESUMEN DE PEIDO EN UNA COL COMO EN LAS PAGINAS DE ECOMMERCE (YA ME QUEDO PARA LA ENTREGA 6) ---->
+ 
+         <div class="col-md-6">
+           <h4>Resumen de compra</h4>
+           <hr>
+           <p>Subtotal: $ UYU <span id="subtotal"></span></p>
+           <p>Gastos de envío y gestión: $ UYU <span id="envio"></span></p>
+           <hr/>
+           <p>Total: $ UYU <span id="total"></span></p>
+       
+       <br>
+           <!-- ENTREGA 6 Boton MODAL -->
+       
+       <div class="d-grid gap-2">
+        <button class="btn btn-link" type="button" class="btn btn-primary" data-bs-toggle="modal"
+         data-bs-target="#pagpModal"> <i class="fa-solid fa-credit-card p-2"></i> Seleccionar forma de pago </button>
+       </div>
+ <br>
+   <!-- Boton MODAL -->
+           
+               <div class="d-grid gap-2">
+                 <button class="btn btn-dark" type="submit"> <i class="fa-solid fa-credit-card p-2"></i> Finalizar compra</button></form>
+               </div>
+        <!-- ENTREGA 6 MODAL -->
+               <div class="modal fade" tabindex="-1" role="dialog" id="pagpModal">
+                 <div class="modal-dialog modal-dialog-centered" role="document">
+                   <div class="modal-content">
+                     <div class="modal-header">
+                       <h5 class="modal-title"> Forma de pago </h5>
+                     </div>
+                     <div class="modal-body">
+ 
+                         <div class="form-check">
+                           <input class="form-check-input" type="radio" name="payCard" id="payCard">
+                           <label class="form-check-label" for="payCard">
+                             <i class="fa-brands fa-cc-visa"></i> <i class="fa-brands fa-cc-mastercard"></i> Tarjeta de crédito / débito 
+                           </label>
+                         </div>
+ 
+                         <hr>
+ 
+                         <div class="mt-3 mr-2">
+                           <div class="row g-2">
+                               <div class="col-md-6">
+                                   <div class="inputbox">
+                                       <small>Número de tarjeta:</small>
+ 
+                                       <input type="text" 
+                                       class="form-control" 
+                                       name=""
+                                       placeholder="1234 5678 9012 3456">
+                                   </div> 
+                               </div>
+ 
+ 
+                               <div class="col-md-6">
+                                   <div class="inputbox">
+                                       <small>Código de seguridad:</small>
+                                       <input type="text" 
+                                       class="form-control" 
+                                       name="" placeholder="CVV">
+                                   </div>
+                               </div> 
+ 
+                           </div>
+                       </div>
+ 
+ 
+                       <div class="mt-3 mr-2">
+                           <div class="row g-2">
+                               <div class="col-md-6">
+                                   <div class="row g-2">
+                                       <div class="col-md-6">
+                                           <div class="inputbox">
+       
+                                       <small>Vencimiento:</small>
+                                       <input type="text" 
+                                       class="form-control" 
+                                       name=""
+                                       maxlength="3"
+                                       placeholder="MM/AA">
+                                   </div>
+                                       </div>
+                                   </div>
+                               </div>
+                           </div> 
+                       <hr>
+         
+ 
+                       <div class="form-check">
+                         <input class="form-check-input" type="radio" name="payTrans" id="payTrans">
+                         <label class="form-check-label" for="payTrans">
+                           <i class="fa-solid fa-money-bill-transfer"></i> Transferencia bancaria
+                         </label>
+                       </div>
+ 
+                       <div class="mt-3 mr-2">
+                         <div class="row g-2">
+                             <div class="col-md-6">
+                                 <div class="inputbox">
+                             
+                                     <small>Número de cuenta:</small>
+ 
+                                     <input type="text" 
+                                     class="form-control" 
+                                     name=""
+                                     placeholder="1234 5678 9012 3456">
+                                 </div> 
+                                
+                             </div> <hr>
+                         </div>
+                         </div> 
+                     </div>
+                     
+                     <div class="modal-footer">
+                       <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Cerrar</button>
+                     </div>
+                      <!-- ENTREGA 6 MODAL -->
+       
+     </div>
+   </main>
+    
     
     <!-- FIN ENTREGA 5  -->
     

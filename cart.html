@@ -113,29 +113,45 @@
 
 
        
-          <!---FORMULARIO PARA  DATOS DE ENVIO DEL USUARIO ---->
+ <!---FORMULARIO PARA  DATOS DE ENVIO DEL USUARIO ---->
+  
+ <form class="mt-4 needs-validation" novalidate>
+  <h5><i class="fa-solid fa-address-card"></i>  Indique datos de envío:</h5>
+  <div class="col-md-8">
+    <label for="validationCustom03" class="form-label">Nombre de calle</label>
+    <input type="text" class="form-control" id="validationCustom03" required>
+    <div class="invalid-feedback">
+      Proporciona una calle válida.
+    </div>
+    <div class="valid-feedback">
+      Ok.
+    </div>
+  </div>
 
-          <form class="mt-4">
-            <h5><i class="fa-solid fa-address-card"></i> Indique datos de envío:</h5>
-            <input
-              type="text"
-              class="form-control mt-2"
-              placeholder="Nombre de calle"
-              required
-            />
-            <input
-              type="text"
-              class="form-control mt-2"
-              placeholder="Número de puerta/apto"
-              required
-            />
-            <input
-              type="text"
-              class="form-control mt-2"
-              required
-              placeholder="Esquina"
-            />
-          </form>
+  <div class="col-md-8">
+    <label for="validationCustom03" class="form-label">Número de puerta</label>
+    <input type="text" class="form-control" id="validationCustom03" required>
+    <div class="invalid-feedback">
+      Proporciona número de puerta o apartamento.
+    </div>
+    <div class="valid-feedback">
+      Ok.
+    </div>
+  </div>
+
+  <div class="col-md-8">
+    <label for="validationCustom03" class="form-label">Esquina</label>
+    <input type="text" class="form-control" id="validationCustom03" required>
+    <div class="invalid-feedback">
+      Proporciona una esquina.
+    </div>
+    <div class="valid-feedback">
+      Ok.
+    </div>
+  </div>
+
+  <div class="col-12">
+  </div>
         </div>
 
        <!---CREACION DE RESUMEN DE PEIDO EN UNA COL COMO EN LAS PAGINAS DE ECOMMERCE ---->
@@ -159,7 +175,7 @@
   <!-- Boton MODAL -->
           
               <div class="d-grid gap-2">
-                <button class="btn btn-dark" type="button"> <i class="fa-solid fa-credit-card p-2"></i> Confirmar compra</button>
+                <button class="btn btn-dark" type="button"> <i class="fa-solid fa-credit-card p-2"></i> Confirmar compra</button></form>
               </div>
        <!-- ENTREGA 6 MODAL -->
               <div class="modal fade" tabindex="-1" role="dialog" id="pagpModal">
@@ -285,6 +301,7 @@
   <script src="https://kit.fontawesome.com/a846280a86.js" crossorigin="anonymous"></script>
   <script src="js/init.js"></script>
   <script src="js/cart.js"></script>
+  <script src="js/validationbs.js"></script>
 </body>
 
 </html>

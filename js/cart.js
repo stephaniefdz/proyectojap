@@ -120,5 +120,23 @@ document.addEventListener("DOMContentLoaded", async function() {
 
 
 
+    //  Desactivación de los campos de la opción no seleccionada 
+
+    document.getElementById("payTrans").addEventListener("click", function () {
+        document.getElementById("transNum").removeAttribute("disabled");
+        document.getElementById("exp").setAttribute("disabled", "");
+        document.getElementById("cvv").setAttribute("disabled", "");
+        document.getElementById("cardNum").setAttribute("disabled", "");
+       
+        
+    });
+    
+    document.getElementById("payCard").addEventListener("click", function () {
+        document.getElementById("exp").removeAttribute("disabled");
+        document.getElementById("cvv").removeAttribute("disabled");
+        document.getElementById("cardNum").removeAttribute("disabled");
+        document.getElementById("transNum").setAttribute("disabled", "");
+        
+    });
 
 

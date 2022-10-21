@@ -51,11 +51,126 @@
     </div>
   </nav>
   <main>
-    <div class="container">
+   <!-- https://getbootstrap.com/docs/4.0/components/breadcrumb/ -->
+    <section style="background-color: rgb(248, 249, 250);">
+      <div class="container py-5">
+        <div class="row">
+          <div class="col">
+            <nav aria-label="breadcrumb" class="bg-light rounded-3 p-3 mb-4">
+              <ol class="breadcrumb mb-0">
+                <li class="breadcrumb-item"><a href="#">Mi perfil</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Actualizar perfil</li>
+              </ol>
+            </nav>
+          </div>
+        </div>
+    
+        <div class="row">
+          <div class="col-lg-4">
+            <div class="card mb-4">
+              <div class="card-body text-center">
+                <img src="img/undraw_pic_profile_re_1865.svg" alt="userImg"
+                  class="rounded-circle img-fluid" style="width: 150px;">
+                <h5 class="my-3">Hola, usuario! </h5>
+                <p class="text-muted mb-4">Montevideo, Uruguay</p>
+                <div class="d-flex justify-content-center mb-2">
+                </div>
+              </div>
+            </div>
+      
+          </div>
+          <div class="col-lg-8">
+            <div class="card mb-4">
+              <div class="card-body">
+                <div class="row">
+                  <div class="col-sm-3">
+                    <p class="mb-0">Nombre completo</p>
+                  </div>
+                  <div class="col-sm-9">
+                    <input id= "userName" class="form-control" type="text" placeholder="">
+                  </div>
+                </div>
+                <hr>
+                <div class="row">
+                  <div class="col-sm-3">
+                    <p class="mb-0">Dirección de E-mail</p>
+                  </div>
+                  <div class="col-sm-9">
+                    <p class="text-muted mb-0">usuario@gmail.com</p> 
+                  </div>
+                </div>
+                <hr>
+                <div class="row">
+                  <div class="col-sm-3">
+                    <p class="mb-0">Número de télefono</p>
+                  </div>
+                  <div class="col-sm-9">
+                    <input id= "userCel"class="form-control" type="text" placeholder="098 123 456">
+                  </div>
+                </div>
+                <hr>
+
+                <div class="row">
+                  <div class="col-sm-3">
+                    <p class="mb-0">Dirección de envío</p>
+                  </div>
+                  <div class="col-sm-9">
+                    <input id= "userAdresss" class="form-control" type="text"  placeholder="Benito Blanco 1234 y 21 de Septiembre.">
+                  </div>
+                </div>
+                
+                <hr>
+                <div class="row">
+                  <div class="col-sm-3">
+                    <p class="mb-0">Forma de pago</p>
+                  </div>
+                  <div class="col-sm-9">
+                    <p class="text-primary text-decoration-underline mb-0">Transferencia bancaria <i class="fa-solid fa-pencil p-2"></i></p>
+                  </div>
+                </div>
+                <div class="d-grid gap-2">
+                  <br>
+                  <button class="btn btn-dark" type="button">Guardar cambios</button>
+
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-6">
+                <div class="card mb-4 mb-md-0">
+                  <div class="card-body">
+                    <p class="mb-4"><span class="text-dark me-1"> <b> Vistos recientemente</b></span>/ Categorias  / Autos
+                    </p>
+                    <img src="/img/prod50921_1.jpg" style="width:  150px;" alt="">
+                    <img src="/img/prod50924_1.jpg" style="width:  150px;" alt="">
+                    
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="card mb-4 mb-md-0">
+                  <div class="card-body">
+                    <p class="mb-4"><span class="text-dark me-1"> <b>Tus favoritos</b> </span>/ Categorias  / Autos
+                    </p>
+                    <img src="/img/prod50924_1.jpg" style="width:  150px;" alt="">
+                    <img src="/img/prod50922_1.jpg" style="width:  150px;" alt="">
+
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- <div class="container">
       <div class="alert alert-danger text-center" role="alert">
         <h4 class="alert-heading">Funcionalidad en desarrollo</h4>
       </div>
-    </div>
+    </div> -->
   </main>
   <footer class="text-muted">
     <div class="container">

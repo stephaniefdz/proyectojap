@@ -4,7 +4,7 @@
 
 const GET_CART = CART_INFO_URL; // URL QUE CONTIENE LOS DATOS QUE QUIERO MOSTRAR 
 const productsinCartHTML = document.getElementById("cart"); 
-
+//USD = 41;
 
 let TIPO_ENVIO = { standard: 5, express: 7, standard: 15 };
 
@@ -78,7 +78,7 @@ function resumenCompra() {
     for (elem of subTotalArticles) {
         if (elem.dataset.currency === 'USD') {
             // console.log(elem.dataset.subtotal);
-            subtotal += USD * parseFloat(elem.dataset.subtotal);
+            subtotal += parseFloat(elem.dataset.subtotal);
         } else {
             subtotal += parseFloat(elem.dataset.subtotal);
         }

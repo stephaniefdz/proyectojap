@@ -6,8 +6,7 @@ const GET_CART = CART_INFO_URL; // URL QUE CONTIENE LOS DATOS QUE QUIERO MOSTRAR
 const productsinCartHTML = document.getElementById("cart"); 
 
 
-const USD = 41; 
-let TIPO_ENVIO = { premium: 15, express: 7, standard: 5 };
+let TIPO_ENVIO = { standard: 5, express: 7, standard: 15 };
 
 // Funcion que trae al articulo del usuario en el carrito con un for y lo insertamos en el html cart que es un tbody
 

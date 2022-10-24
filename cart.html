@@ -70,20 +70,24 @@
        <div class="row" id="envios">
          <div class="col-md-6">
            <h5><i class="fa-solid fa-truck-fast"></i> Seleccione tipo de envío:</h5>
+           
+               <!-- ENVIO PREMIUM --> 
            <div class="form-check">
              <input
                class="form-check-input"
                type="radio"
                name="envio"
-               id="standard"
+               id="premium"
                onclick="resumenCompra()"
                checked
              />
-             <label class="form-check-label" for="standard">
+             <label class="form-check-label" for="premium">
               Premium (15%).</label
              >
              <small> Entrega en 2 - 15 días.</small>
            </div>
+           
+            <!-- ENVIO EXPRESS --> 
            <div class="form-check">
              <input
                class="form-check-input"
@@ -97,15 +101,17 @@
              >
               <small> Entrega en 5 - 8 días.</small>
            </div>
+           
+            <!-- ENVIO STANDARD --> 
            <div class="form-check">
              <input
                class="form-check-input"
                type="radio"
                name="envio"
-               id="express"
+               id="standard"
                onclick="resumenCompra()"
              />
-             <label class="form-check-label" for="express">
+             <label class="form-check-label" for="standard">
              Standard (5%).</label
              >
               <small> Entrega en 12 - 15 días.</small>

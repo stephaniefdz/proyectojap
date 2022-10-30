@@ -97,6 +97,7 @@ function resumenCompra() {
     document.getElementById('total').innerHTML = subtotal + gastosEnvio;
 }
 
+
     //  Desactivación de los campos de la opción no seleccionada por medio del uso del evento click y atributo disabled 
 
     document.getElementById("payTrans").addEventListener("click", function () {

@@ -17,15 +17,14 @@
 <body>
 
   <style>
-     .invalido {
-      color: red;
-    }
+     
 
-    .invalido :hover {
+    .fm :hover {
       color: red;
     }
 
     .fm {
+      color: red;
       display: none;
     }
   </style>
@@ -193,7 +192,8 @@
        <div class="col-md-6">
         <h4> Forma de pago</h4>
         <br>
-        <small class="invalido fm" id="formaSeleccionada" >Debe seleccionar una forma de pago</small>
+        <small id="formaselect"></small>
+        <small class="fm" id="formaSeleccionada" >Debe seleccionar una forma de pago</small>
         <button class="btn btn-link" type="button" class="btn btn-primary" data-bs-toggle="modal"
          data-bs-target="#pagpModal" id="btn-formapago"> Seleccionar forma de pago </button>
        </div>

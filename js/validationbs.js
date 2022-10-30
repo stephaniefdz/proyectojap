@@ -15,10 +15,10 @@
           if (!form.checkValidity()) {
             event.preventDefault()
             event.stopPropagation()
-            validarModal()   
+            validarModal()   // ejecuto la funcion de validarmodal 
           }
           else{
-            showAlert()
+            showAlert() // ejecuto la alerta 
           }
           form.classList.add('was-validated')
         }, false)
@@ -28,25 +28,30 @@
 
 
 const btnModaFP  = document.getElementById("btn-formapago"); // id del boton link del modal 
+
+const btnFinalizarCompra = document.getElementById("btn-finalizarcompra"); // boton de envio del form 
+
+
+
 const inputPagoCard = document.querySelector(".pagotarjeta");  // clase dek input radio tipo forma de pago tarjeta
 const inputPagoTransf = document.querySelector(".pagotransferencia");  // clase dek input radio tipo forma de pago tarjeta
-const btnFinalizarCompra = document.getElementById("btn-finalizarcompra"); // boton de envio del form 
 const aviso = document.querySelector(".fm"); // mensaje oculto 
+
+// campos que use para la validacion del modal 
 const vto = document.getElementById("exp");
 const banktransf = document.getElementById("transNum"); 
 
- // Muestra en rojo el mensaje de Debe seleccionar forma de pago al darle click, se evalua el btn forma de pago si tiene una clase que se llama invalido. Entonces marca el btn del modal en  rojo y aparece el mensaje de error
-
+ 
  vto.addEventListener("input", validarModal)
  banktransf.addEventListener("input", validarModal)
 
 
 function validarModal(){
-  if(vto.value != "" || banktransf.value != ""){
-    aviso.style.display = "none"
+  if(vto.value != "" || banktransf.value != ""){ // si el input vto OR nro cuenta bancaria son diferentes de vacio 
+    aviso.style.display = "none" // el aviso en  rojo desaparece 
 
   } else { 
-    aviso.style.display = "inline" 
+    aviso.style.display = "inline" // SI NO, se muestra 
   }
 
 }

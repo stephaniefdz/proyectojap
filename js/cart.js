@@ -118,19 +118,3 @@ function resumenCompra() {
 
 
 
-
-
-    //Funcion para eliminar un articulo del carrito que recible como parametro id 
-
-// Defino la variable article
-
-// let article = [];
-
-// function removeArticle(id) { 
-    
-//     let article = document.getElementsByClassName('article'+id);
-//     article[0].parentElement.remove();
-//     window.setTimeout('location.reload()', 300);  //Solo para mostrar que funciona el boton de eliminar - se eliminara en proximas entregas 
-//    //llamamos y ejecutamos a la función resumenCompra()
-//     resumenCompra();
-// }

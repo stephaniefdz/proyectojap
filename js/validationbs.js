@@ -15,6 +15,7 @@
           if (!form.checkValidity()) {
             event.preventDefault()
             event.stopPropagation()
+            showAlert()
           }
   
           form.classList.add('was-validated')
@@ -31,20 +32,14 @@ const btnFinalizarCompra = document.getElementById("btn-finalizarcompra"); // bo
 const aviso = document.querySelector(".fm"); // mensaje oculto 
 
 
-// Para mostrar 
+ // Muestra en rojo el mensaje de Debe seleccionar forma de pago si no se selecciono el input radio de forma (y se llenaron su campos input text)
 
   if (!inputPagoCard.checked) {
     btnFinalizarCompra.addEventListener("click",() => { 
        if (btnModaFP.className.indexOf("invalido") < 0) {   
    btnModaFP.classList.toggle("invalido")
    aviso.classList.toggle("fm")
-   Swal.fire({
-    position: 'center',
-    icon: 'success',
-    title: 'Has comprado exitosamente',
-    showConfirmButton: false,
-    timer: 1500
-  })
+   
 }
   }) }
 
@@ -57,4 +52,12 @@ const aviso = document.querySelector(".fm"); // mensaje oculto
   }) }
   
   
-   
+   function showAlert () {
+    Swal.fire({
+      position: 'center',
+      icon: 'success',
+      title: 'Has comprado exitosamente',
+      showConfirmButton: false,
+      timer: 1500
+    })
+   }

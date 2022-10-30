@@ -82,7 +82,8 @@ btnguardar.addEventListener("click", function () {
         formaelegida.innerHTML = "Tarjeta de crédito / débito"
   });
   
-  
+  // Recurso de: https://sweetalert2.github.io/ - SweetAlert
+
   function showAlert () {
     aviso.style.display = 'none';
     Swal.fire({

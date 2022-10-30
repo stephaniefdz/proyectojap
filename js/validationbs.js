@@ -21,3 +21,40 @@
         }, false)
       })
   })()
+
+
+
+const btnModaFP  = document.getElementById("btn-formapago"); // id del boton link del modal 
+const inputPagoCard = document.querySelector(".pagotarjeta");  // clase dek input radio tipo forma de pago tarjeta
+const inputPagoTransf = document.querySelector(".pagotransferencia");  // clase dek input radio tipo forma de pago tarjeta
+const btnFinalizarCompra = document.getElementById("btn-finalizarcompra"); // boton de envio del form 
+const aviso = document.querySelector(".fm"); // mensaje oculto 
+
+
+// Para mostrar 
+
+  if (!inputPagoCard.checked) {
+    btnFinalizarCompra.addEventListener("click",() => { 
+       if (btnModaFP.className.indexOf("invalido") < 0) {   
+   btnModaFP.classList.toggle("invalido")
+   aviso.classList.toggle("fm")
+   Swal.fire({
+    position: 'center',
+    icon: 'success',
+    title: 'Has comprado exitosamente',
+    showConfirmButton: false,
+    timer: 1500
+  })
+}
+  }) }
+
+  if (!inputPagoTransf.checked) {
+    btnFinalizarCompra.addEventListener("click",() => { 
+       if (btnModaFP.className.indexOf("invalido") < 0) {
+   btnModaFP.classList.toggle("invalido")
+   aviso.classList.toggle("fm")
+}
+  }) }
+  
+  
+   

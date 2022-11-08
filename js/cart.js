@@ -33,7 +33,7 @@ function showCart(cart) {
     htmlContentToAppend = '';
     for (let i = 0; i < cart.length; i++) { //recorre todos los productos del carrito
         htmlContentToAppend += ` 
-        <tr onchange="modify(event)"> 
+        <tr onchange="modificarCostos(event)"> 
             <th scope="col" class="${'article'+i}"><img src="${cart[i].image}" width="150px"></th>
             <th scope="col" class="${'article'+i}">${cart[i].name}</th>
             <th scope="col" class="${'article'+i}">${cart[i].currency} <span class="cost">${cart[i].unitCost}</span></th>
@@ -50,7 +50,7 @@ function showCart(cart) {
 //Funcion que suma el precio de los productos en el subtotal
 //dataset: https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/dataset
 
-function modify(event) {
+function modificarCostos(event) {
     dataArti = document.getElementsByClassName(event.target.dataset.class);
 
     // Actualiza subtotal

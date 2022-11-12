@@ -50,7 +50,7 @@ function showCategoriesList(){
             ((maxCount == undefined) || (maxCount != undefined && parseInt(category.productCount) <= maxCount))){
 
                 htmlContentToAppend += `
-                <div onclick="setCatID(${category.id})" class="bg-dark text-white shadow-none p-3 mb-5 bg-light rounded list-group-item list-group-item-action" cursor-active">
+                <div class="bg-dark text-white shadow-none p-3 mb-3 bg-light rounded list-group-item list-group-item-action" cursor-active">
                     <div class="row">
                         <div class="col-3">
                             <img src="${category.imgSrc}" alt="${category.description}" class="img-fluid rounded">
@@ -61,6 +61,8 @@ function showCategoriesList(){
                                 <small class="text-muted">${category.productCount} artículos</small>
                             </div>
                             <p class="mb-1">${category.description}</p>
+                            <br>
+                            <button class="btn btn-outline-dark btn-rounded me-md-2" type="button" style="border-radius: 40px;" onclick="setCatID(${category.id})">Ver productos</button>
                         </div>
                     </div>
                 </div>

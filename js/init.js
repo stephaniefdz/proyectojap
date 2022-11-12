@@ -46,7 +46,7 @@ let getJSONData = function(url){
 // Funcion para cerrar sesion 
 
 function userlogOut(){
-  localStorage.removeItem("mail");
+  localStorage.clear();   // Elimino los datos almacenados en el localStorage y redirecciono a index 
   window.location = "index.html"
 }
 
@@ -72,3 +72,22 @@ document.addEventListener('DOMContentLoaded', ()=> {
 </div>
 `;
   });
+
+
+  // Desafiate Entrega 7 
+const imagePreview = document.getElementById('imgDef');
+const inputFile = document.getElementById('inputFileFileimg');
+
+inputFile.addEventListener('change', (event) => {
+    const image = event.target.files[0];
+    
+    const reader = new FileReader();
+
+    reader.readAsDataURL(image);
+
+    reader.addEventListener('load', () => {
+        imagePreview.setAttribute('src', reader.result);
+        localStorage.setItem('imgDef', reader.result);
+
+    });
+});

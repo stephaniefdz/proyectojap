@@ -75,19 +75,20 @@ document.addEventListener('DOMContentLoaded', ()=> {
 
 
   // Desafiate Entrega 7 
+
 const imagePreview = document.getElementById('imgDef');
-const inputFile = document.getElementById('inputFileFileimg');
+const inputFile = document.getElementById('inputFileimg');
 
 inputFile.addEventListener('change', (event) => {
-    const image = event.target.files[0];
+    const image = event.target.files[0]; // evento que viene del <input type="file"> del HTML my-profile
     
-    const reader = new FileReader();
+    const reader = new FileReader(); // uso de constructor FileReader para leer datos de obj Blob (https://developer.mozilla.org/es/docs/Web/API/Blob)
 
-    reader.readAsDataURL(image);
+    reader.readAsDataURL(image); // Lee el contenido de reader y lo codifica como URL de datos base64 
 
     reader.addEventListener('load', () => {
-        imagePreview.setAttribute('src', reader.result);
-        localStorage.setItem('imgDef', reader.result);
+        imagePreview.setAttribute('src', reader.result); // Se visualiza el resultado en la página web 
+        localStorage.setItem('imgDef', reader.result); // La guarda en el almacenamiento local /localStorage
 
     });
 });

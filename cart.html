@@ -54,10 +54,7 @@
   </nav>
   <!-- FIN barra de navegacion  -->
   
-  <!-- INICIO ENTREGA 5  -->
-  
-  
-  
+  <!-- inicio container tabla de articulos en el carrito -->
   <main>
     <div class="container p-5">
        <div class="row">
@@ -78,8 +75,9 @@
            </table>
          </div>
        </div>
-       <hr />
- 
+       <hr/>
+   <!-- Fin container tabla de articulos en el carrito -->
+
        <!--tipo de envios --> 
        <form class="mt-4 needs-validation" novalidate>
        <div class="row" id="envios">
@@ -93,7 +91,7 @@
                type="radio"
                name="envio"
                id="premium"
-               onclick="resumenCompra()"
+               onclick="costTicket()"
                required
                checked
              />
@@ -110,7 +108,7 @@
                type="radio"
                name="envio"
                id="express"
-               onclick="resumenCompra()"
+               onclick="costTicket()"
                required
              />
              <label class="form-check-label" for="express">
@@ -126,7 +124,7 @@
                type="radio"
                name="envio"
                id="standard"
-               onclick="resumenCompra()"
+               onclick="costTicket()"
                required
              />
              <label class="form-check-label" for="standard">
@@ -137,7 +135,8 @@
   <!-- FIN tipo de envios --> 
  
  <br>
-   <!--- E6 FORMULARIO PARA  DATOS DE ENVIO DEL USUARIO CON VALIDACIÓN ---->
+  <!-- Espacio para datos de envio  -->
+
    <h5><i class="fa-solid fa-address-card"></i>  Indique datos de envío:</h5>
    <div class="col-md-8">
      <label for="validationCustom03" class="form-label">Nombre de calle</label>
@@ -175,23 +174,27 @@
    <div class="col-12">
    </div>
          </div>
+          <!-- Fin espacio para datos de envio  -->
  
-        <!---CREACION DE RESUMEN DE PEDIDO EN UNA COL COMO EN LAS PAGINAS DE ECOMMERCE (YA ME QUEDO PARA LA ENTREGA 6) ---->
+       <!-- container Costos -->
  
-         <div class="col-md-6" style="background-color: #EEEEEE; border-radius: 7px;">
+         <div class="container col-md-6">
           <br>
-           <h4>Costos</h4>
+           <h5><b>Costos</b></h5>
            <hr>
            <p>Subtotal: USD <span id="subtotal"></span></p>
+           <hr>
            <p>Gastos de envío y gestión: USD <span id="envio"></span></p>
            <hr/>
            <p>Total: USD <span id="total"></span></p>
        
        <br>
+        <!-- container Costos -->
+
            <!-- ENTREGA 6 Boton MODAL -->
-       
+       <hr>
        <div class="col-md-6">
-        <h4> Forma de pago</h4>
+        <h5> Forma de pago</h5>
         <br>
         <small id="formaselect"></small>
         <small class="fm" id="formaSeleccionada" >Debe seleccionar una forma de pago</small>
@@ -304,15 +307,14 @@
                      <div class="modal-footer">
                        <button type="button" class="btn btn-outline-dark" data-bs-dismiss="modal" style="border-radius: 40px;">Cerrar</button>
                      </div>
-                      <!-- ENTREGA 6 MODAL -->
+                      <!-- fin modal -->
        
      </div>
     </form>
+     <!-- fin form -->
    </main>
     
-    
-    <!-- FIN ENTREGA 5  -->
-    
+     <!-- inicio footer -->
   <footer class="text-muted">
     <div class="container">
       <p class="float-end">
@@ -324,6 +326,8 @@
       <p>Clickea <a target="_blank" href="Letra.pdf">aquí</a> para descargar la letra del obligatorio.</p>
     </div>
   </footer>
+   <!-- fin footer -->
+
   <div id="spinner-wrapper">
     <div class="lds-ring">
       <div></div>

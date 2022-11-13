@@ -17,23 +17,20 @@ document.addEventListener("DOMContentLoaded", async function() {
 });
 
 // Defino las constantes necesarias 
+const GET_CART = CART_INFO_URL; // Accedo a los datos de la URL que quiero mostrar en la pagina web  
+const productsinCartHTML = document.getElementById("cart"); // Container donde quiero que se "imprima" en el HTML esa información
 
-const GET_CART = CART_INFO_URL; // URL QUE CONTIENE LOS DATOS QUE QUIERO MOSTRAR 
-const productsinCartHTML = document.getElementById("cart"); // Donde queremos que se "imprima" esa información
-//USD = 41;
-
-// Defino nombre del objeto, y lo utilizo para almacenar las tres propiedades  de tipo de envio y su value (key-value)
-let TIPO_ENVIO = { standard: 5, express: 7, premium: 15 };
+let TIPO_ENVIO = { standard: 5, express: 7, premium: 15 }; // Defino nombre del objeto, y lo utilizo para almacenar las tres propiedades  de tipo de envio y su value (key-value)
 
 
 
-// Funcion que trae al articulo del usuario en el carrito con un for y lo insertamos en el html cart que es un tbody
+// Funcion que trae al articulo del usuario en el carrito con un for y lo insertamos en el html cart que en un tbody
 
 function showCart(cart) {
     htmlContentToAppend = '';
-    for (let i = 0; i < cart.length; i++) { //recorre todos los productos del carrito
+    for (let i = 0; i < cart.length; i++) { //Recorre todos los productos del carrito
         htmlContentToAppend += ` 
-        <tr onchange="modificarCostos(event)"> 
+        <tr onchange="changeCosts(event)"> 
             <th scope="col" class="${'article'+i}"><img src="${cart[i].image}" width="150px"></th>
             <th scope="col" class="${'article'+i}">${cart[i].name}</th>
             <th scope="col" class="${'article'+i}">${cart[i].currency} <span class="cost">${cart[i].unitCost}</span></th>
@@ -43,14 +40,14 @@ function showCart(cart) {
         `
     }
     productsinCartHTML.innerHTML = htmlContentToAppend;
-//llamamos y ejecutamos a la función resumenCompra()
-    resumenCompra();
+// Y llamamos y ejecutamos a la función costTicket()
+    costTicket();
 }
 
 //Funcion que suma el precio de los productos en el subtotal
 //dataset: https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/dataset
 
-function modificarCostos(event) {
+function changeCosts(event) {
     dataArti = document.getElementsByClassName(event.target.dataset.class);
 
     // Actualiza subtotal
@@ -61,17 +58,17 @@ function modificarCostos(event) {
     let elem = dataArti[4].getElementsByClassName('subTotal')[0];
     elem.innerHTML = subtotal;
     elem.dataset.subtotal = subtotal;
-    //llamamos y ejecutamos a la función resumenCompra()
-    resumenCompra();
+
+    //Llamamos y ejecutamos a la función costTicket()
+    costTicket();
 }
 
 
-// Funcion para mostrar y actualizar el monto del subtotal, gastos de envio y gestion, total dinamicamente
+// Funcion para mostrar y actualizar el monto del subtotal, gastos de envio y total dinamicamente
 
-function resumenCompra() {
-    let envio = document.querySelector('input[type=radio]:checked'); //se ontiene el valor del boton tipo radio
-
-    //se define el contador subtotal, gastosEnvio y total inicializados en 0 y lo renderizo en "Costos".
+function costTicket() {
+    let envio = document.querySelector('input[type=radio]:checked'); // Obtenemos el valor del input radio en estado checked
+    //se define el contador subtotal, gastosEnvio y total inicializados en 0 y lo renderizo en el container HTML de "Costos".
     let subtotal = 0; 
     let gastosEnvio = 0;
     let total = 0;
@@ -81,26 +78,27 @@ function resumenCompra() {
             // console.log(elem.dataset.subtotal);
             subtotal += parseFloat(elem.dataset.subtotal);
     }
+  // Costos 
+ // Se visualiza  en el  HTML el monto en el subtotal 
 
-
-
-// COSTOS 
-
-    // Muestro el monto en el subtotal del resumen de compra 
     document.getElementById('subtotal').innerHTML = subtotal;
     
-        // Muestro el monto del subtotal multiplicado por los costes de envio segun elección en el resumen 
+// Se visualiza en el  HTML el monto del subtotal multiplicado por los costes de envio segun elección del usuario
+    
     gastosEnvio = subtotal * TIPO_ENVIO[envio.id] / 100;
     document.getElementById('envio').innerHTML = gastosEnvio;
 
-    //Muestro el monto total en el resumen de compras sumando subTotal y envio 
+//Se visualiza en el  HTML el monto final sumando el subtotal con los gastos de envio segun lo seleccionado por el usuario
+    
     document.getElementById('total').innerHTML = subtotal + gastosEnvio;
 }
 
 
-    //  Desactivación de los campos de la opción no seleccionada por medio del uso del evento click y atributo disabled 
 
-    document.getElementById("payTrans").addEventListener("click", function () {
+
+//  Desactivación de los campos de la opción no seleccionada por medio del uso del evento click y atributo disabled 
+
+        document.getElementById("payTrans").addEventListener("click", function () {
         document.getElementById("transNum").removeAttribute("disabled");
         document.getElementById("exp").setAttribute("disabled", "");
         document.getElementById("cvv").setAttribute("disabled", "");
@@ -122,7 +120,6 @@ function resumenCompra() {
 
 // Validacion de formulario Bootstrap src https://getbootstrap.esdocu.com/docs/5.1/forms/validation/
 
-
 (function () {
     'use strict'
   
@@ -139,7 +136,7 @@ function resumenCompra() {
             validarModal()   // ejecuto la funcion de validarmodal 
           }
           else{
-            showAlert() // ejecuto la alerta 
+            showSuccessAlert() // ejecuto la alerta confirmando la compra éxitosa
           }
           form.classList.add('was-validated')
         }, false)
@@ -186,6 +183,7 @@ let formaelegida = document.getElementById("formaselect");
 
 
 btnguardar.addEventListener("click", function () {
+
 // Si el input radio de pago con transferencia o pago con tarjeta esta clickeado, imprimo en el span del html cart la forma
 if (inputPagoTransf.checked) 
 return formaelegida.innerHTML = "Transferencia Bancaria" ; 
@@ -197,11 +195,11 @@ return formaelegida.innerHTML = "Tarjeta de crédito / débito"
 
   // Recurso de: https://sweetalert2.github.io/ - SweetAlert costumizado para dar otro estilo a las alarmas  
 
- function showAlert () {
+ function showSuccessAlert () {
     Swal.fire({
       iconHtml: '<img src="img/alert success.png">',
       showConfirmButton: false,
-      timer: 6000
+      timer: 5000
      
     })
     }

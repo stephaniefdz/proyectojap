@@ -1,14 +1,15 @@
 
-const getURLInfo = PRODUCT_INFO_URL; 
-const getURLComments = PRODUCT_INFO_COMMENTS_URL;  
-const getURLProducts = PRODUCTS_URL; 
-const productNameHTML = document.getElementById('productName');
-const productDescriptionHTML = document.getElementById('productDescription');
-const productCostHTML = document.getElementById('productCost');
+// defino las constantes necesarias 
+const getProductInfo = PRODUCT_INFO_URL; 
+const getUserComments = PRODUCT_INFO_COMMENTS_URL;  
+const getProduct = PRODUCTS_URL; 
+const productName = document.getElementById('productName');
+const productDescription = document.getElementById('productDescription');
+const productCost = document.getElementById('productCost');
 const productSoldCountHTML = document.getElementById('productSoldCount');
-let productCategoryHTML = document.getElementById('productCategory');
-const showStarReviews = document.getElementById("reviewContainer");
-const starUserRating = document.getElementsByClassName("starRating");
+let productCategory = document.getElementById('productCategory');
+const showUserReviews = document.getElementById("reviewContainer");
+const starScore = document.getElementsByClassName("starRating");
 
 // Muestra las imagenes ilustrativas del producto a traves de un array 
 
@@ -16,6 +17,7 @@ const showIllustrativeImg = (array) => {
   let htmlContentToAppend = '';
   for (let i = 0; i < array.length; i++) {
     let image = array[i];
+
     htmlContentToAppend += `
     <div class="col-lg-3 col-md-3 col-6 ">
       <div class="d-block mb-6 h-160">
@@ -28,16 +30,16 @@ const showIllustrativeImg = (array) => {
 }
 
 // Funcion para marcar estrellas y enviarlas en el comentario 
-function paintStars(star, nro) {
-  for (let i = 1; i <= 5; i++) {
-    let star = document.getElementById('star' + i)
-    star.className = "fa fa-star"  // className devuelve el valor del atributo de contenido de la clase del elemento
+function paintingStars(str, nro) {
+  for (var i = 1; i <= 5; i++) {
+    var s = document.getElementById('star' + i)
+    s.className = "fa fa-star"  // className devuelve el valor del atributo de contenido de la clase del elemento
   }
 
-  for (let i = 1; i <= nro; i++) {
-    let star = document.getElementById('star' + i)
-    if (star.className == "fa fa-star") {
-      star.className = "fa fa-star checked"
+  for (var i = 1; i <= nro; i++) {
+    var s = document.getElementById('star' + i)
+    if (s.className == "fa fa-star") {
+      s.className = "fa fa-star checked"
     }
   }
 
@@ -48,7 +50,7 @@ function paintStars(star, nro) {
 //Se muestra la calificacion del usuario con estrellas cuando agrega un comentario 
 
 const showRating = (rating) => {
-  let scoreUser = '';
+  let htmlScore = '';
   let stars = '';
 
   for (let i = 1; i <= 5; i++) {
@@ -58,25 +60,25 @@ const showRating = (rating) => {
       stars += `<i class="fa fa-star"></i>`;
     }
   }
-  scoreUser = `<span> ${stars} </span>`
-  return scoreUser
+  htmlScore = `<span> ${stars} </span>`
+  return htmlScore
 }
 
 // Se muestra la calificación/rate de estrellas precargadas del  json de JAP 
-const showStarsRat = (productInfo) => {
+const showStars = (productInfo) => {
   for (let i = 0; i < productInfo.length; i++) {
     const product = productInfo[i];
-    starUserRating[i].innerHTML += `<span class="fa fa-star checked"></span>`.repeat(product.score);
-    starUserRating[i].innerHTML += `<span class="fa fa-star"></span>`.repeat(5 - product.score);
+    starScore[i].innerHTML += `<span class="fa fa-star checked"></span>`.repeat(product.score);
+    starScore[i].innerHTML += `<span class="fa fa-star"></span>`.repeat(5 - product.score);
   }
 }
 
 // Se muestran los comentarios precargados del json de JAP 
 const showUsersComments = (productInfo) => {
-  let htmlContentToAppend = [];
+  let showUsersCommentsHtmlContentToAppend = [];
   for (let i = 0; i < productInfo.length; i++) {
     let product = productInfo[i];
-    htmlContentToAppend += `
+    showUsersCommentsHtmlContentToAppend += `
     <div class="p-auto my-auto">
       <div class="d-flex justify-content-between">
         <h5 class="font-weight-bold"><i class="fas fa-user mr-1"></i> ${product.user}</h5>
@@ -89,8 +91,8 @@ const showUsersComments = (productInfo) => {
     </div>
     `
   }
-  containerReviews.innerHTML = htmlContentToAppend;
-  showStarsRat(productInfo);
+  showUserReviews.innerHTML = showUsersCommentsHtmlContentToAppend;
+  showStars(productInfo);
 }
 
 
@@ -103,11 +105,11 @@ function saveProdID(id) {
   // Con esta funcion se puede ver la imagen principal y nombre de producto relacionado 
 
 const showRelatedProducts = (rArray) => {
-  let htmlContentToAppend = '';
+  let showRelatedProductsHtmlToAppend = '';
   for (let i = 0; i < rArray.length; i++) {
     let related = rArray[i];
 
-    htmlContentToAppend +=  
+    showRelatedProductsHtmlToAppend +=  
     `<div class="card" style="width: 18rem;">
   <img class="card-img-top" src="${related.image}">
   <div class="card-body">
@@ -118,7 +120,7 @@ const showRelatedProducts = (rArray) => {
 
 `
   }
-  document.getElementById("relatedProduct").innerHTML = htmlContentToAppend;
+  document.getElementById("relatedProduct").innerHTML = showRelatedProductsHtmlToAppend;
 }
 
 
@@ -133,6 +135,7 @@ const postComments = () => {
   let month = parseInt(todayDate.getMonth());
   month < 10 ? month = "0" + month : '';
   todayDate = todayDate.getFullYear() + '-' + month + '-' + todayDate.getDate() + '  ' + todayDate.getHours() + ":" + todayDate.getMinutes() + ":" + todayDate.getSeconds();
+//   console.log(todayDate);
   if (textAreaComments) {
     let htmlCommentToAppend = `
     <div class="p-2 my-6">
@@ -149,7 +152,7 @@ const postComments = () => {
     </div>
     `
 
-    containerReviews.innerHTML += htmlCommentToAppend;
+    showUserReviews.innerHTML += htmlCommentToAppend;
 
     
   }
@@ -158,20 +161,19 @@ const postComments = () => {
 //Función que se ejecuta una vez que se haya lanzado el evento de
 //que el documento se encuentra cargado, es decir, se encuentran todos los
 //elementos HTML presentes.
-// Llama, ejecuta y muestra la información del producto en getURLInfo ya esta colocado el ID de producto (ver init.js)
+// Llama, ejecuta y muestra la información del producto en getProductInfo ya esta colocado el ID de producto (ver init.js)
 document.addEventListener("DOMContentLoaded", async function() { 
-  
-    getJSONData(getURLInfo).then(function (response) {
+    getJSONData(getProductInfo).then(function (response) {
     if (response.status === 'ok') {
       product = response.data;
       console.log(product);
 
       
-      productNameHTML.innerHTML = product.name;
-      productDescriptionHTML.innerHTML = product.description;
-      productCostHTML.innerHTML = product.cost;
+      productName.innerHTML = product.name;
+      productDescription.innerHTML = product.description;
+      productCost.innerHTML = product.cost;
       productSoldCountHTML.innerHTML = product.soldCount;
-      productCategoryHTML.innerHTML = product.category;
+      productCategory.innerHTML = product.category;
 
       showIllustrativeImg(product.images);
       showRelatedProducts(product.relatedProducts);
@@ -180,7 +182,7 @@ document.addEventListener("DOMContentLoaded", async function() {
   });
 
   // llamo al json de comentarios y aplico la funcion showUserComments(productComments) 
-  getJSONData(getURLComments).then(function (response) {
+  getJSONData(getUserComments).then(function (response) {
     let productComments = response.data;
     showUsersComments(productComments);
   });

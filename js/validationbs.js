@@ -56,23 +56,6 @@ function validarModal(){
 
 }
 
-
-//   if (!inputPagoCard.checked) {
-//     btnFinalizarCompra.addEventListener("click",() => { 
-//        if (btnModaFP.className.indexOf("invalido") < 0) {   
-//    btnModaFP.classList.toggle("invalido")
-//    aviso.classList.toggle("fm")
-   
-// }
-//   }) }
-
-//   if (!inputPagoTransf.checked) {
-//     btnFinalizarCompra.addEventListener("click",() => { 
-//        if (btnModaFP.className.indexOf("invalido") < 0) {
-//    btnModaFP.classList.toggle("invalido")
-//    aviso.classList.toggle("fm")
-// }
-//   }) }
   
 // Para mostrar forma de pago seleccionada en pantalla:
 
@@ -87,15 +70,13 @@ btnguardar.addEventListener("click", function () {
         formaelegida.innerHTML = "Tarjeta de crédito / débito"
   });
   
-  // Recurso de: https://sweetalert2.github.io/ - SweetAlert
+  // Recurso de: https://sweetalert2.github.io/ - SweetAlert costumizado para dar otro estilo a las alarmas  
 
-  function showAlert () {
-    aviso.style.display = 'none';
+ function showAlert () {
     Swal.fire({
-      position: 'center',
-      icon: 'success',
-      title: 'Has comprado exitosamente',
+      iconHtml: '<img src="img/alert success.png">',
       showConfirmButton: false,
-      timer: 1500
+      timer: 6000
+     
     })
-   }
+    }

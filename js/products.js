@@ -68,7 +68,7 @@ function showProductList() {
     //  
     {
       htmlContentToAppend += `<div class="list-group" id="cat-list-container">   
-                <div class="bg-dark text-white shadow-none p-3 mb-5 bg-light rounded list-group-item list-group-item-action" onclick="saveProdID(${theProducts.id})">
+                <div class="text-dark shadow-none p-3 mb-3 bg-light rounded list-group-item list-group-item-action">
                 <div class="row">
                     <div class="col-3">
                         <img src= "${theProducts.image}" alt="product image" class="img-fluid rounded"">
@@ -81,6 +81,8 @@ function showProductList() {
                             </div>
                             <small class="text-muted">${theProducts.soldCount} Vendidos </small> 
                         </div>
+                        <br>
+                        <button class="btn btn-outline-dark btn-rounded me-md-2" type="button" style="border-radius: 40px;" onclick="saveProdID(${theProducts.id})">Ver producto</button>
                     </div>
                     </div>    
                     </div>  

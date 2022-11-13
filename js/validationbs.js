@@ -65,11 +65,15 @@ let formaelegida = document.getElementById("formaselect");
 
 
 btnguardar.addEventListener("click", function () {
-    if (inputPagoTransf.checked || inputPagoCard.checked) // Si el input radio de pago con transferencia o pago con tarjeta esta clickeado, imprimo en el span del html cart la forma
-        formaelegida.innerHTML = "Transferencia Bancaria" ;
-        formaelegida.innerHTML = "Tarjeta de crédito / débito"
+// Si el input radio de pago con transferencia o pago con tarjeta esta clickeado, imprimo en el span del html cart la forma
+if (inputPagoTransf.checked) 
+return formaelegida.innerHTML = "Transferencia Bancaria" ; 
+
+if (inputPagoCard.checked) 
+return formaelegida.innerHTML = "Tarjeta de crédito / débito"
   });
-  
+
+
   // Recurso de: https://sweetalert2.github.io/ - SweetAlert costumizado para dar otro estilo a las alarmas  
 
  function showAlert () {

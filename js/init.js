@@ -74,7 +74,7 @@ document.addEventListener('DOMContentLoaded', ()=> {
   });
 
 
-  // Desafiate Entrega 7 
+  // Entrega 7
 
 const imagePreview = document.getElementById('imgDef');
 const inputFile = document.getElementById('inputFileimg');

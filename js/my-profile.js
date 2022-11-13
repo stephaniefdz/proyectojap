@@ -42,12 +42,16 @@
 
 }
 
-// // Obtengo los datos almacenados del localStorage y los "registro" como el valor o src del usuario en el form 
-// const inputEmail = document.getElementById("inputEmail").value = localStorage.getItem("mail");
-// const imgUserSelect = document.getElementById('imgDef').src = localStorage.getItem("imgDef"); 
-// const fileSelect = document.getElementById('inputFileimg').src = localStorage.getItem("inputFileimg"); 
-// const userFirstName = document.getElementById("inputFirstname").value = localStorage.getItem("inputFirstname"); 
-// const userSecondName = document.getElementById("inputSecondname").value = localStorage.getItem("inputSecondname"); 
-// const userFirstLastname = document.getElementById("inputFirstlastname").value = localStorage.getItem("inputFirstlastname");
-// const userSecondLastName = document.getElementById("inputsecondLastname").value = localStorage.getItem("inputsecondLastname"); 
-// const userTelephone = document.getElementById("inputContactnum").value = localStorage.getItem("inputContactnum");  
+
+
+
+
+// Obtengo los datos almacenados del localStorage y los "registro" como el valor o src del usuario en el form 
+const inputEmail = document.getElementById("inputEmail").value = localStorage.getItem("mail");
+const imgUserSelect = document.getElementById('imgDef').src = localStorage.getItem("imgDef"); 
+const fileSelect = document.getElementById('inputFileimg').src = localStorage.getItem("inputFileimg"); 
+const userFirstName = document.getElementById("inputFirstname").value = localStorage.getItem("inputFirstname"); 
+const userSecondName = document.getElementById("inputSecondname").value = localStorage.getItem("inputSecondname"); 
+const userFirstLastname = document.getElementById("inputFirstlastname").value = localStorage.getItem("inputFirstlastname");
+const userSecondLastName = document.getElementById("inputsecondLastname").value = localStorage.getItem("inputsecondLastname"); 
+const userTelephone = document.getElementById("inputContactnum").value = localStorage.getItem("inputContactnum");  

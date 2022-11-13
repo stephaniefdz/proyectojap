@@ -65,7 +65,7 @@ document.addEventListener('DOMContentLoaded', ()=> {
 </svg> ${UserId}</button>
   </button>
   <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-    <li><a class="dropdown-item" href="cart.html">Mi carrito <span class="badge rounded-pill bg-dark">1</span></a></li>
+    <li><a class="dropdown-item" href="cart.html">Mi carrito</a></li>
     <li><a class="dropdown-item" href="my-profile.html">Mi perfil</a></li>
     <li><a class="dropdown-item" onclick=userlogOut()>Cerrar sesión</a></li>
   </ul>

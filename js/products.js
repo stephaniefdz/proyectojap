@@ -61,7 +61,7 @@ function showProductList() {
     let  inputSearchProduct  = document.getElementById("searchItem").value.toLowerCase();
   
     // En el caso de que mo se selecione un MAX O MIN se deberian ver todos los theProducts
-    ((minCost == undefined || (minCost != undefined && parseInt(theProducts.cost) >= minCost)) &&
+    if ((minCost == undefined || (minCost != undefined && parseInt(theProducts.cost) >= minCost)) &&
       (maxCost == undefined || (maxCost != undefined && parseInt(theProducts.cost) <= maxCost)&& theProducts.name.toLowerCase().includes(inputSearchProduct)) 
       
     )

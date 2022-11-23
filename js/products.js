@@ -58,13 +58,12 @@ function showProductList() {
   let htmlContentToAppend = "";
   for (let i = 0; i < product.products.length; i++) {
     let theProducts = product.products[i]; // products: Propiedad de la resp json 
-    let  inputSearchProduct  = document.getElementById("searchItem").value.toLowerCase();
+    let  inputSearchProduct  = document.getElementById("searchItem").value.toLowerCase();      // Desafiate 2 Buscador en tiempo real  
   
     // En el caso de que mo se selecione un MAX O MIN se deberian ver todos los theProducts
-    if ((minCost == undefined || (minCost != undefined && parseInt(theProducts.cost) >= minCost)) &&
-      (maxCost == undefined || (maxCost != undefined && parseInt(theProducts.cost) <= maxCost)&& theProducts.name.toLowerCase().includes(inputSearchProduct)) 
+    if ((((minCost == undefined) || (minCost != undefined && parseInt(product.cost) >= minCost)) &&
+    ((maxCost == undefined) || (maxCost != undefined && parseInt(product.cost) <= maxCost)))&&((theProducts.name.toLowerCase().includes(inputSearchProduct))))
       
-    )
     //  
     {
       htmlContentToAppend += `<div class="list-group" id="cat-list-container">   

@@ -21,7 +21,7 @@ const showIllustrativeImg = (array) => {
     htmlContentToAppend += `
     <div class="col-lg-3 col-md-3 col-6 ">
       <div class="d-block mb-6 h-160">
-      <img src= "${image}" alt="product image" class="img-fluid rounded"">
+      <img src="${image}" alt="product image" class="img-fluid rounded">
       </div>
     </div>
     `
@@ -129,13 +129,10 @@ const submitComment = document.getElementById('submitComment');
 const postComments = () => {
   let textAreaComments = document.getElementById('textAreaComments').value;
   document.getElementById("textAreaComments").value = " ";
-
-  // Data constructor basado en https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date
   let todayDate = new Date(); 
-  let month = parseInt(todayDate.getMonth());
+  let month = todayDate.getMonth() + 1;
   month < 10 ? month = "0" + month : '';
   todayDate = todayDate.getFullYear() + '-' + month + '-' + todayDate.getDate() + '  ' + todayDate.getHours() + ":" + todayDate.getMinutes() + ":" + todayDate.getSeconds();
-//   console.log(todayDate);
   if (textAreaComments) {
     let htmlCommentToAppend = `
     <div class="p-2 my-6">
@@ -144,11 +141,10 @@ const postComments = () => {
         <div class="starRating">
             ${showRating(rating)}
         </div>
-        </div>
-        <p class="pt-2">${textAreaComments}</p>
-        <p class="text-right">${todayDate}</p>
-        <hr>
       </div>
+      <p class="pt-2">${textAreaComments}</p>
+      <p class="text-right">${todayDate}</p>
+      <hr>
     </div>
     `
 
